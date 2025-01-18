@@ -5,7 +5,7 @@
 
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  @apply bg-white;
+  @apply text-darkGrey;
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
