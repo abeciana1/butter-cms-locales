@@ -11,7 +11,8 @@ catch (e) {
 
 export const getMainMenu = (isPreview: string) => {
     return butter.page.retrieve('navigation_menu', 'main-menu', {
-      preview: isPreview === 'preview=1' ? 1 : 0
+      preview: isPreview === 'preview=1' ? 1 : 0,
+      alt_media_text: 1
     })
     .then(function(resp) {
         return resp.data
