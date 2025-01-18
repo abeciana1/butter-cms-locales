@@ -15,7 +15,7 @@ const MissingComponent: React.FC<MissingComponentI> = ({ type }) => {
 const ComponentRenderer = ({ type, sectionData }: ComponentRendererI) => {
 	const sectionsComponentPaths = () => ({
 		[type]: dynamic(
-			() => import(`@/components/${toPascalCase(type)}`)
+			() => import(`@/components/_page-sections/${toPascalCase(type)}`)
 				.catch(() => () => <MissingComponent type={type} />), {
             ssr: true
 		})
