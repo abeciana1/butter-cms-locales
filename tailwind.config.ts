@@ -6,6 +6,12 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontWeight: {
+      light: '300',
+      normal: '400',
+      medium: '500',
+      bold: '700',
+    },
     extend: {
       colors: {
         navy: '#11405E',
