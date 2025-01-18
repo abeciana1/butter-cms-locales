@@ -6,6 +6,9 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      roboto: 'Roboto'
+    },
     fontWeight: {
       light: '300',
       normal: '400',
