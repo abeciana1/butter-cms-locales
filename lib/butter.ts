@@ -9,10 +9,13 @@ catch (e) {
   console.log(e)
 }
 
-export const getMainMenu = () => {
-    butter.page.retrieve('navigation_menu', 'main-menu')
+export const getMainMenu = (isPreview: string) => {
+    butter.page.retrieve('navigation_menu', 'main-menu', {
+      preview: isPreview === 'preview=1' ? 1 : 0
+    })
     .then(function(resp) {
         console.log('main menu', resp.data)
+        return resp.data
     })
     .catch(function(resp) {
         console.log(resp)
