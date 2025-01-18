@@ -12,7 +12,7 @@ catch (e) {
 export const getMainMenu = () => {
     butter.page.retrieve('navigation_menu', 'main-menu')
     .then(function(resp) {
-        console.log('main menu response', resp.data)
+        console.log('main menu', resp.data)
     })
     .catch(function(resp) {
         console.log(resp)
