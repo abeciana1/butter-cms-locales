@@ -67,7 +67,7 @@ const TabGroup: React.FC<TabGroupSectionI> = ({
     const [ activeIdx, setActive ] = useState(0)
     return (
         <section className='border-b-2 border-grey mx-5'>
-            <div className='text-center border-y-2 border-grey py-8 mt-16 mx-5'>
+            <div className='text-center border-y-2 border-grey py-8 mt-16 '>
                 <Heading1
                     text={headline}
                     color={ColorE.NAVY}
