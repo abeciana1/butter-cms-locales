@@ -61,7 +61,7 @@ export interface HighlightI {
     image: string;
     link: string;
     link_label: string;
-    meta: {
+    meta?: {
         id: number;
     }
 }
