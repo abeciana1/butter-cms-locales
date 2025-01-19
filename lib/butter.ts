@@ -26,7 +26,8 @@ export const getPageData = (isPreview: string, slug: string) => {
   const page = slug === '/' ? 'homepage' : slug
   return butter.page.retrieve('*', page, {
     preview: isPreview === 'preview=1' ? 1 : 0,
-    alt_media_text: 1
+    alt_media_text: 1,
+    levels: 3
   })
   .then(function(resp) {
       return resp.data
