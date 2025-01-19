@@ -43,7 +43,7 @@ const TabButtonContainer: React.FC<TabButtonContainerI> = ({
 }) => {
     return (
         <div
-            className='bg-[#F6F6F6]'
+            className='bg-[#F6F6F6] ml-5'
         >
             {tabs?.map((tab: TabI, index: number) => {
                 return (
