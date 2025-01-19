@@ -1,14 +1,11 @@
 import { SubNavigationLinksI, SubsectionLinkI } from '@/definitions/interfaces/_navigation'
-import TextContent from '@/components/_styled/TextContent'
 import { ColorE, FontWeightE, FontSizeE } from '@/definitions/enums'
-import { SubNavLink } from '@/components/_page-elements/SubsectionLinks'
 import SiteLink from '@/components/_styled/SiteLink'
 
 const SubNavigationLinks: React.FC<SubNavigationLinksI> = ({
     phoneNumber,
     navigationLinks
 }) => {
-    console.log('navigationLinks', navigationLinks)
     return (
         <div
             className='flex justify-end bg-navy py-1 items-center px-5'
