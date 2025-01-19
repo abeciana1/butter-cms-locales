@@ -54,3 +54,19 @@ export interface TabGroupSectionI {
     headline: string;
     tabs: TabI[];
 }
+
+export interface HighlightI {
+    title: string;
+    excerpt: string;
+    image: string;
+    link: string;
+    link_label: string;
+    meta: {
+        id: number;
+    }
+}
+
+export interface HighlightSectionI {
+    title: string;
+    highlights: HighlightI[];
+}
