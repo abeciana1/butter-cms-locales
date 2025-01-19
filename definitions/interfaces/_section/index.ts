@@ -19,3 +19,14 @@ export interface HeroI {
 export interface SliderHeroI {
     hero: HeroI[];
 }
+
+export interface FeatureI {
+    image: ButterImage;
+    about: string;
+    title: string;
+    link: string;
+}
+
+export interface FeaturesSectionI {
+    feature: FeatureI[]
+}
