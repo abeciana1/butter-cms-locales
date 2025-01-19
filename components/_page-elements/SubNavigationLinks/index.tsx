@@ -8,7 +8,7 @@ const SubNavigationLinks: React.FC<SubNavigationLinksI> = ({
 }) => {
     return (
         <div
-            className='flex justify-end bg-navy py-1 items-center px-5'
+            className='lg:flex justify-end bg-navy py-1 items-center px-5 hidden'
         >
             <div className='border-r-[1px] border-white pr-4'>
                 <SiteLink
