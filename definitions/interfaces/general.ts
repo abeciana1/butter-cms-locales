@@ -18,3 +18,7 @@ export interface ButterImage {
 export interface ButterColor {
     color: string;
 }
+
+export interface ButterFontWeight {
+    font_weight: string;
+}
