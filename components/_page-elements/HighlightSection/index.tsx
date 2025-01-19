@@ -61,15 +61,14 @@ const HighlightSection: React.FC<HighlightSectionI> = ({
 }) => {
     const [itemsPerSlide, setItemsPerSlide] = useState(4);
 
-    // Update items per slide based on window size
     useEffect(() => {
         const updateItemsPerSlide = () => {
             if (window.innerWidth >= 1024) {
-            setItemsPerSlide(4); // Desktop
+            setItemsPerSlide(4);
             } else if (window.innerWidth >= 640) {
-            setItemsPerSlide(2); // Tablet
+            setItemsPerSlide(2);
             } else {
-            setItemsPerSlide(1); // Mobile
+            setItemsPerSlide(1);
             }
         };
 
@@ -78,13 +77,12 @@ const HighlightSection: React.FC<HighlightSectionI> = ({
         return () => window.removeEventListener("resize", updateItemsPerSlide);
     }, []);
 
-    // Group the highlights into slides
     const getSlides = (items: HighlightI[], itemsPerSlide: number) => {
         return items.reduce((resultArray, item, index) => {
             const chunkIndex = Math.floor(index / itemsPerSlide);
     
             if (!resultArray[chunkIndex]) {
-            resultArray[chunkIndex] = []; // Start a new chunk
+            resultArray[chunkIndex] = [];
             } 
     
             resultArray[chunkIndex].push(item);
