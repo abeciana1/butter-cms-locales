@@ -87,3 +87,12 @@ export interface TeaserSectionI {
     title: string;
     teasers: TeaserI[];
 }
+
+export interface PressReleaseCardI {
+
+}
+
+export interface PressReleaseSectionI {
+    title: string;
+    press_releases: PressReleaseCardI[]
+}
