@@ -15,7 +15,11 @@ export enum FontWeightE {
 }
 
 export enum FontSizeE {
+    SM = 'SM',
+    MD = 'MD',
     LG = 'LG',
     XL = 'XL',
-    XXL = 'XXL'
+    XXL = 'XXL',
+    XXXL = 'XXXL',
+    XXXXL = 'XXXXL'
 }
