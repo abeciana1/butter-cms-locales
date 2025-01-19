@@ -13,7 +13,7 @@ export interface SubsectionLinkI {
     }
 }
 
-export interface SubNavigationLinksI {
+export interface SubsectionLinksI {
     label: string;
     subsectionLinks: SubsectionLinkI[];
     setDisplay: (arg0: boolean) => void;
@@ -35,4 +35,9 @@ export interface NavBarI {
         logo_height: number;
         links: NavigationLinkI[];
     }
+}
+
+export interface SubNavigationLinksI {
+    phoneNumber: string;
+    navigationLinks: SubsectionLinkI[];
 }
