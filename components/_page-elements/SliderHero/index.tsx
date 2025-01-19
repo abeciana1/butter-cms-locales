@@ -21,7 +21,7 @@ const Hero: React.FC<HeroI> = ({
     return (
         <section className='relative flex items-center'>
             <div
-                className={cx('absolute flex flex-row z-50 top-5 lg:top-20 lg:w-1/2 pl-16', {
+                className={cx('absolute flex flex-row z-50 top-5 md:top-10 xl:top-20 lg:w-1/2 pl-16', {
                     ['right-0']: content_on_right
                 })}
             >
