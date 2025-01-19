@@ -13,7 +13,6 @@ const MissingComponent: React.FC<MissingComponentI> = ({ type }) => {
 }
 
 const ComponentRenderer = ({ type, sectionData }: ComponentRendererI) => {
-    console.log('ComponentRenderer type', toPascalCase(type))
 	const sectionsComponentPaths = () => ({
 		[type]: dynamic(
 			() => import(`@/components/_page-elements/${toPascalCase(type)}`)
