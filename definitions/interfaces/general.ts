@@ -9,3 +9,12 @@ export interface MissingComponentI {
 export interface PageMarginI {
     children: React.ReactNode | React.ReactNode[]
 }
+
+export interface ButterImage {
+    url: string;
+    alt: string;
+}
+
+export interface ButterColor {
+    color: string;
+}
