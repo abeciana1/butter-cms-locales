@@ -36,6 +36,7 @@ export interface ButtonLinkI {
     linkText: string;
     buttonColor: string | ColorE;
     link: string;
+    fontWeight?: FontWeightE
 }
 
 export interface HTMLContentI {
