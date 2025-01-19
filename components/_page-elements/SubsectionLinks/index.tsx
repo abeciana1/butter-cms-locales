@@ -1,12 +1,12 @@
 import {
-    SubNavigationLinksI,
+    SubsectionLinksI,
     SubsectionLinkI
 } from '@/definitions/interfaces/_navigation'
 import TextContent from '@/components/_styled/TextContent'
 import { ColorE, FontWeightE, FontSizeE } from '@/definitions/enums'
 import SiteLink from '@/components/_styled/SiteLink'
 
-const SubNavLink: React.FC<SubsectionLinkI> = ({
+export const SubNavLink: React.FC<SubsectionLinkI> = ({
     label,
     url
 }) => {
@@ -23,7 +23,7 @@ const SubNavLink: React.FC<SubsectionLinkI> = ({
     )
 }
 
-const SubNavigationLinks: React.FC<SubNavigationLinksI> = ({
+const SubsectionLinks: React.FC<SubsectionLinksI> = ({
     label,
     subsectionLinks,
     setKeep,
@@ -36,7 +36,7 @@ const SubNavigationLinks: React.FC<SubNavigationLinksI> = ({
                 setKeep(false)
                 setDisplay(false)
             }}
-            className="bg-blue absolute left-0 w-full top-16 p-5 rounded-b-md gap-5 border-t-2 border-navy opacity-80 shadow-lg"
+            className="bg-blue absolute left-0 w-full top-14 p-5 rounded-b-md gap-5 border-t-2 border-navy opacity-90 shadow-lg"
         >
             <TextContent
                 text={label}
@@ -57,4 +57,4 @@ const SubNavigationLinks: React.FC<SubNavigationLinksI> = ({
     )
 }
 
-export default SubNavigationLinks
+export default SubsectionLinks
