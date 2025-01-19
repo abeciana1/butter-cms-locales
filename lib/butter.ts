@@ -21,3 +21,16 @@ export const getMainMenu = (isPreview: string) => {
         console.log(resp)
     });
 }
+
+export const getPageData = (isPreview: string) => {
+  return butter.page.retrieve('*', 'homepage', {
+    preview: isPreview === 'preview=1' ? 1 : 0,
+    alt_media_text: 1
+  })
+  .then(function(resp) {
+      console.log(resp.data)
+  })
+  .catch(function(resp) {
+      console.log(resp)
+  });
+}
