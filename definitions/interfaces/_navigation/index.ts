@@ -24,3 +24,15 @@ export interface NavigationLinkI {
     type: string;
     fields: NavigationLinkFieldI;
 }
+
+export interface NavBarI {
+    fields: {
+        logo: {
+            url: string;
+            alt: string;
+        },
+        logo_width: number;
+        logo_height: number;
+        links: NavigationLinkI[];
+    }
+}
