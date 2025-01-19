@@ -29,7 +29,7 @@ export const getPageData = (isPreview: string, slug: string) => {
     alt_media_text: 1
   })
   .then(function(resp) {
-      console.log(resp.data)
+      return resp.data
   })
   .catch(function(resp) {
       console.log(resp)
