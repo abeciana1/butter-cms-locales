@@ -19,7 +19,6 @@ export const pageDataFetch = () => {
 
 export default function Home() {
   const pageData = pageDataFetch()
-  console.log('pageData', pageData)
   const {
     body
   } = pageData?.data?.fields
