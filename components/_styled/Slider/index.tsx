@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { PageMarginI } from '@/definitions/interfaces/general'
