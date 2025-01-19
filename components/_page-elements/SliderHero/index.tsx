@@ -68,7 +68,6 @@ const SliderHero: React.FC<SliderHeroI> = ({
         <section>
             <Slider>
                 {hero?.map((hero: HeroI, index: number) => {
-                    console.log('hero', hero)
                     return (
                         <Hero
                             key={hero?.headline + index}
