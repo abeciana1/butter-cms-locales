@@ -20,12 +20,4 @@ export const getMainMenu = (isPreview: string) => {
     .catch(function(resp) {
         console.log(resp)
     });
-    // try {
-    //     const response = butter?.page?.retrieve('navigation_menu', 'main-menu')
-    
-    //     console.log('getMainMenu response', response)
-    //   }
-    //   catch (e) {
-    //     throw e.response.data.detail
-    //   }
 }
