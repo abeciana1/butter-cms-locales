@@ -70,3 +70,20 @@ export interface HighlightSectionI {
     title: string;
     highlights: HighlightI[];
 }
+
+export interface TeaserI {
+    title: string;
+    body: string;
+    cta: string;
+    icon: string;
+    background_color: ButterColor;
+    link: string;
+    meta?: {
+        id: string;
+    }
+}
+
+export interface TeaserSectionI {
+    title: string;
+    teasers: TeaserI[];
+}
