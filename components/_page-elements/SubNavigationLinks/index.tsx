@@ -1,6 +1,50 @@
-const SubNavigationLinks = () => {
+import { SubNavigationLinksI, SubsectionLinkI } from '@/definitions/interfaces/_navigation'
+import TextContent from '@/components/_styled/TextContent'
+import { ColorE, FontWeightE, FontSizeE } from '@/definitions/enums'
+import { SubNavLink } from '@/components/_page-elements/SubsectionLinks'
+import SiteLink from '@/components/_styled/SiteLink'
+
+const SubNavigationLinks: React.FC<SubNavigationLinksI> = ({
+    phoneNumber,
+    navigationLinks
+}) => {
+    console.log('navigationLinks', navigationLinks)
     return (
-        <></>
+        <div
+            className='flex justify-end bg-navy py-1 items-center px-5'
+        >
+            <div className='border-r-[1px] border-white pr-4'>
+                <SiteLink
+                    linkText={phoneNumber}
+                    href={'/'}
+                    color={ColorE.WHITE}
+                    fontSize={FontSizeE.SM}
+                    fontWeight={FontWeightE.MEDIUM}
+                />
+            </div>
+            {navigationLinks && navigationLinks?.map((link: SubsectionLinkI, index: number) => {
+                return (
+                    <div
+                        className='border-r-[1px] border-white px-4'
+                    >
+                        <SiteLink
+                            linkText={link?.label}
+                            href={link?.url || '/'}
+                            color={ColorE.WHITE}
+                            fontSize={FontSizeE.SM}
+                            fontWeight={FontWeightE.MEDIUM}
+                        />
+                    </div>
+                )
+            })}
+            <div>
+                <input
+                    type='text'
+                    placeholder='Search...'
+                    className='h-5'
+                />
+            </div>
+        </div>
     )
 }
 
