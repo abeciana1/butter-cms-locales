@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} antialiased max-w-[1440px]`}
+        className={`${roboto.variable} antialiased max-w-[1440px] relative mx-auto`}
       >
         <NavBar />
         {children}
