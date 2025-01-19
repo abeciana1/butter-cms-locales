@@ -30,3 +30,27 @@ export interface FeatureI {
 export interface FeaturesSectionI {
     feature: FeatureI[]
 }
+
+export interface TabI {
+    title: string;
+    image: ButterImage;
+    text_content: string;
+}
+
+export interface TabButtonI {
+    buttonLabel: string;
+    isActive: boolean;
+    onClick: (arg0: number) => void;
+    index: number;
+}
+
+export interface TabButtonContainerI {
+    tabs: TabI[];
+    activeIdx: number;
+    setActive: (arg0: number) => void;
+}
+
+export interface TabGroupSectionI {
+    headline: string;
+    tabs: TabI[];
+}
