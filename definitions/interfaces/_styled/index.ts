@@ -25,3 +25,9 @@ export interface TextContentI {
     fontWeight: FontWeightE;
     fontSize: FontSizeE;
 }
+
+export interface HeadingI {
+    text: string;
+    color: ColorE;
+    fontWeight: FontWeightE;
+}
