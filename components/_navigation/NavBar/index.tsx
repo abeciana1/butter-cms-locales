@@ -3,7 +3,7 @@ import { getMainMenu } from '@/lib/butter'
 import { headers } from 'next/headers';
 import Image from 'next/image'
 import ComponentRenderer from '@/components/ComponentRender'
-import { NavigationLinkI } from '@/definitions/interfaces/_navigation'
+import { NavigationLinkI, NavBarI } from '@/definitions/interfaces/_navigation'
 
 const NavBar = () => {
     const headersList = use(headers());
@@ -11,7 +11,7 @@ const NavBar = () => {
     const navContent = use(getMainMenu(isPreview as string))
     const {
         fields
-    } = navContent?.data
+    } = navContent?.data as NavBarI
     return (
         <nav className='flex relative justify-between items-center py-2 px-5'>
             <Image
