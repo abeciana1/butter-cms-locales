@@ -22,6 +22,7 @@ const SubNavigationLinks: React.FC<SubNavigationLinksI> = ({
             {navigationLinks && navigationLinks?.map((link: SubsectionLinkI, index: number) => {
                 return (
                     <div
+                        key={link?.label + index}
                         className='border-r-[1px] border-white px-4'
                     >
                         <SiteLink
