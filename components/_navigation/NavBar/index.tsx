@@ -13,7 +13,7 @@ const NavBar = () => {
         fields
     } = navContent?.data
     return (
-        <nav className='flex relative justify-between items-center'>
+        <nav className='flex relative justify-between items-center py-2 px-5'>
             <Image
                 src={fields?.logo?.url}
                 alt={fields?.logo?.alt}
@@ -21,7 +21,7 @@ const NavBar = () => {
                 height={fields?.logo_height}
             />
             <ul
-                className='flex gap-7 relative items-center'
+                className='flex gap-7 items-center'
             >
                 {fields?.links?.map(({type, fields: sectionData}: NavigationLinkI, index: number) => {
                     return (
