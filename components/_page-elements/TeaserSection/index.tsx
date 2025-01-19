@@ -71,7 +71,7 @@ const TeaserSection: React.FC<TeaserSectionI> = ({
 }) => {
     console.log('teasers', teasers)
     return (
-        <section className='mt-10 border-b-2 border-grey pb-16 mx-5'> 
+        <section className='mt-10 border-b-2 border-grey pb-20 mx-5'> 
             <div className='text-center'>
                 <Heading1
                     text={title}
