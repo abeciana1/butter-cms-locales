@@ -18,3 +18,10 @@ export interface LinkI {
     fontWeight: FontWeightE;
     fontSize: FontSizeE;
 }
+
+export interface TextContentI {
+    text: string;
+    color: ColorE;
+    fontWeight: FontWeightE;
+    fontSize: FontSizeE;
+}
