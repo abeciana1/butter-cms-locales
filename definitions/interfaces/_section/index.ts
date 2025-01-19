@@ -89,7 +89,14 @@ export interface TeaserSectionI {
 }
 
 export interface PressReleaseCardI {
-
+    meta?: {
+        id: string;
+    };
+    title: string;
+    excerpt: string;
+    date: string;
+    link_label: string;
+    link: string;
 }
 
 export interface PressReleaseSectionI {
