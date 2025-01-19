@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { PageMarginI } from '@/definitions/interfaces/general'
 
-type SliderProps = {
-  children: React.ReactNode;
-};
-
-const Slider: React.FC<SliderProps> = ({ children }) => {
+const Slider: React.FC<PageMarginI> = ({ children }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const totalSlides = React.Children.count(children);
