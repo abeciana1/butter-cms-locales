@@ -12,7 +12,7 @@ const ButtonLink: React.FC<ButtonLinkI> = ({
     return (
         <Link
             href={link || '/'}
-            className={cx('text-xl py-1 px-7', {
+            className={cx('text-xl py-1 px-3', {
                 ['bg-navy text-white']: buttonColor === ColorE.NAVY,
                 ['bg-white text-navy']: buttonColor === ColorE.WHITE,
                 ['bg-grey text-navy']: buttonColor === ColorE.GREY,
