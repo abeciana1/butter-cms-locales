@@ -21,13 +21,19 @@ export interface LinkI {
 
 export interface TextContentI {
     text: string;
-    color: ColorE;
-    fontWeight: FontWeightE;
-    fontSize: FontSizeE;
+    color: ColorE | string;
+    fontWeight: FontWeightE | string;
+    fontSize: FontSizeE | string;
 }
 
 export interface HeadingI {
     text: string;
-    color: ColorE;
-    fontWeight: FontWeightE;
+    color: string;
+    fontWeight: string;
+}
+
+export interface ButtonLinkI {
+    linkText: string;
+    buttonColor: string | ColorE;
+    link: string;
 }
