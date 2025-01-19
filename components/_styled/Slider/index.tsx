@@ -36,7 +36,7 @@ const Slider: React.FC<PageMarginI> = ({ children }) => {
         >
           {React.Children.map(children, (child, index) => (
             <div
-              className={`flex-shrink-0 w-full px-4`}
+              className={`flex-shrink-0 w-full`}
               key={index}
             >
               {child}
