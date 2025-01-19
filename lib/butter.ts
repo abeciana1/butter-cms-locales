@@ -22,8 +22,9 @@ export const getMainMenu = (isPreview: string) => {
     });
 }
 
-export const getPageData = (isPreview: string) => {
-  return butter.page.retrieve('*', 'homepage', {
+export const getPageData = (isPreview: string, slug: string) => {
+  const page = slug === '/' ? 'homepage' : slug
+  return butter.page.retrieve('*', page, {
     preview: isPreview === 'preview=1' ? 1 : 0,
     alt_media_text: 1
   })
