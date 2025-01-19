@@ -37,3 +37,7 @@ export interface ButtonLinkI {
     buttonColor: string | ColorE;
     link: string;
 }
+
+export interface HTMLContentI {
+    textContent: string;
+}
