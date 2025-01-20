@@ -116,10 +116,10 @@ export interface DoctorCardI {
     fax: string;
     headshot: ButterImage;
     map_link: string;
-    meta?: {
-        id: number
-    };
     name: string;
     phone: string;
     zip_code: string;
+    meta?: {
+        id: number
+    };
 }
