@@ -1,0 +1,55 @@
+import { use } from 'react'
+import { getPageData } from '@/lib/butter'
+import { headers } from 'next/headers';
+import type { Metadata } from 'next'
+import ComponentRenderer from '@/components/ComponentRender'
+import { PageMarginWrapper } from '@/components/_layouts'
+import { pageDataFetch } from '@/app/page'
+import cx from 'classnames'
+
+export default function DynamicPage() {
+    const pageData = pageDataFetch()
+    console.log('DynamicPage body', pageData)
+    const {
+        sidebar,
+        body
+    } = pageData?.data?.fields
+    return (
+    <main>
+        <PageMarginWrapper>
+            <section
+                className={cx({
+                    ['flex']: sidebar?.length > 0
+                })}
+            >
+                {(sidebar && sidebar?.length > 0) &&
+                    <section className='basis-1/3'>
+                        {sidebar?.map(({type, fields: sectionData}: any, index: number) => {
+                            return (
+                            <ComponentRenderer
+                                key={type + index}
+                                type={type}
+                                sectionData={sectionData}
+                            />
+                            )
+                        })}
+                    </section>
+                }
+                {(body && body?.lenggth > 0) &&
+                    <section className='basis-2/3'>
+                        {body?.map(({type, fields: sectionData}: any, index: number) => {
+                            return (
+                            <ComponentRenderer
+                                key={type + index}
+                                type={type}
+                                sectionData={sectionData}
+                            />
+                            )
+                        })}
+                    </section>
+                }
+            </section>
+        </PageMarginWrapper>
+    </main>
+    );
+}
