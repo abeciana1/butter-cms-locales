@@ -36,7 +36,7 @@ const SubsectionLinks: React.FC<SubsectionLinksI> = ({
                 setKeep(false)
                 setDisplay(false)
             }}
-            className="bg-blue absolute left-0 w-full top-14 p-5 rounded-b-md gap-5 border-t-2 border-navy opacity-90 shadow-lg"
+            className="bg-blue z-50 absolute left-0 w-full top-14 p-5 rounded-b-md gap-5 border-t-2 border-navy opacity-90 shadow-lg"
         >
             <TextContent
                 text={label}
