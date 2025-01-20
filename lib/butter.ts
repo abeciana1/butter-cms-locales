@@ -36,3 +36,17 @@ export const getPageData = (isPreview: string, slug: string) => {
       console.log(resp)
   });
 }
+
+export const collectionDataFetch = (modelName: string, page_size: number = 10, page: number = 1) => {
+  return butter.content.retrieve([modelName], {
+    page_size: page_size,
+    page: page,
+    alt_media_text: 1,
+  })
+  .then(function(resp) {
+      return resp.data
+  })
+  .catch(function(resp) {
+      console.log(resp)
+  });
+}
