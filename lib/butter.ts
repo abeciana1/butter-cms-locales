@@ -44,7 +44,7 @@ export const collectionDataFetch = (modelName: string, page_size: number = 10, p
     alt_media_text: 1,
   })
   .then(function(resp) {
-      return resp.data
+      return resp?.data?.data
   })
   .catch(function(resp) {
       console.log(resp)
