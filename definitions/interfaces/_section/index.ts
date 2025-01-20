@@ -79,7 +79,7 @@ export interface TeaserI {
     background_color: ButterColor;
     link: string;
     meta?: {
-        id: string;
+        id: number;
     }
 }
 
@@ -90,7 +90,7 @@ export interface TeaserSectionI {
 
 export interface PressReleaseCardI {
     meta?: {
-        id: string;
+        id: number;
     };
     title: string;
     excerpt: string;
@@ -102,4 +102,24 @@ export interface PressReleaseCardI {
 export interface PressReleaseSectionI {
     title: string;
     pressReleases: PressReleaseCardI[]
+}
+
+export interface FindADoctorI {
+    title: string;
+}
+
+export interface DoctorCardI {
+    address: string;
+    city_and_state: string;
+    doc_page_link: string;
+    facility: string;
+    fax: string;
+    headshot: ButterImage;
+    map_link: string;
+    meta?: {
+        id: number
+    };
+    name: string;
+    phone: string;
+    zip_code: string;
 }
