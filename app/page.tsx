@@ -8,7 +8,8 @@ import { PageMarginWrapper } from '@/components/_layouts'
 export const pageDataFetch = () => {
   const headersList = use(headers());
   const isPreview = headersList.get("x-search-param")
-  const pageContent = use(getPageData(isPreview as string, '/'))
+  const path = headersList.get("x-pathname")
+  const pageContent = use(getPageData(isPreview as string, path))
   return pageContent
 }
 
