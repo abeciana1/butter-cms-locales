@@ -1,6 +1,3 @@
-import { use } from 'react'
-import { getPageData } from '@/lib/butter'
-import { headers } from 'next/headers';
 import type { Metadata } from 'next'
 import ComponentRenderer from '@/components/ComponentRender'
 import { PageMarginWrapper } from '@/components/_layouts'
@@ -22,32 +19,36 @@ export default function DynamicPage() {
                     ['flex']: sidebar?.length > 0
                 })}
             >
-                {(sidebar && sidebar?.length > 0) &&
-                    <section className='basis-1/3'>
-                        {sidebar?.map(({type, fields: sectionData}: any, index: number) => {
-                            return (
-                            <ComponentRenderer
-                                key={type + index}
-                                type={type}
-                                sectionData={sectionData}
-                            />
-                            )
-                        })}
-                    </section>
-                }
-                {(body && body?.lenggth > 0) &&
-                    <section className='basis-2/3'>
-                        {body?.map(({type, fields: sectionData}: any, index: number) => {
-                            return (
-                            <ComponentRenderer
-                                key={type + index}
-                                type={type}
-                                sectionData={sectionData}
-                            />
-                            )
-                        })}
-                    </section>
-                }
+                <section
+                    className={cx({
+                        ['basis-1/3 block']: sidebar?.length > 0
+                    })}
+                >
+                    {sidebar?.map(({type, fields: sectionData}: any, index: number) => {
+                        return (
+                        <ComponentRenderer
+                            key={type + index}
+                            type={type}
+                            sectionData={sectionData}
+                        />
+                        )
+                    })}
+                </section>
+                <section
+                    className={cx({
+                        ['basis-2/3 block']: body?.length > 0
+                    })}
+                >
+                    {body?.map(({type, fields: sectionData}: any, index: number) => {
+                        return (
+                        <ComponentRenderer
+                            key={type + index}
+                            type={type}
+                            sectionData={sectionData}
+                        />
+                        )
+                    })}
+                </section>
             </section>
         </PageMarginWrapper>
     </main>
