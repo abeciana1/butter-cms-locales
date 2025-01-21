@@ -129,3 +129,28 @@ export interface ImageSectionI {
     imageHeight: number;
     imageWidth: number;
 }
+
+export interface LocationCardI {
+    contact_link: string;
+    directions_link: string;
+    facility_address_1: string;
+    facility_address_2: string;
+    facility_name: string;
+    map_image: string;
+    online_scheduling_link: string;
+    phone_number: string;
+    meta?: {
+        id: number;
+    };
+    index?: number;
+}
+
+export interface LocationGroupI {
+    locations: LocationCardI[];
+}
+
+export interface HoverLinkI {
+    link: string;
+    link_text: string;
+    border?: boolean
+}
