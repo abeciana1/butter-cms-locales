@@ -15,12 +15,9 @@ const Highlight: React.FC<HighlightI> = ({
     link,
     link_label
 }) => {
-    const [ hover, setHover ] = useState(false)
     return (
         <div
             className='max-w-60'
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
         >
             <Image
                 src={image}
@@ -31,10 +28,7 @@ const Highlight: React.FC<HighlightI> = ({
             />
             <Link
                 href={link || '/'}
-                className={cx('text-xl',{
-                    ['text-navy']: !hover,
-                    ['text-blue']: hover
-                })}
+                className='text-xl text-navy hover:text-blue'
             >
                 {title}
             </Link>
@@ -44,10 +38,7 @@ const Highlight: React.FC<HighlightI> = ({
             <Link
                 href={link || '/'}
                 title={`Learn more - ${title}`}
-                className={cx('text-lg mt-5 font-bold',{
-                    ['text-navy']: hover,
-                    ['text-blue']: !hover
-                })}
+                className='text-lg mt-5 font-bold text-blue hover:text-navy'
             >
                 {link_label}
             </Link>
@@ -105,7 +96,7 @@ const HighlightSection: React.FC<HighlightSectionI> = ({
                 {getSlides(highlights, itemsPerSlide).map((slide, slideIndex) => (
                     <div
                         key={slideIndex}
-                        className={`grid gap-4 p-4 grid-cols-${itemsPerSlide}`}
+                        className={`grid gap-4 p-4 grid-cols-${itemsPerSlide} max-w-fit mx-auto`}
                     >
                         {slide.map((highlight) => (
                             <Highlight
