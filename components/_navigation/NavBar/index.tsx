@@ -14,7 +14,7 @@ const NavBar = () => {
         fields
     } = navContent?.data as NavBarI
     return (
-        <>
+        <div className='sticky top-0 z-50 bg-white'>
             <nav className='flex relative justify-between items-center py-2 px-5'>
                 <Link
                     href='/'
@@ -54,7 +54,7 @@ const NavBar = () => {
                     )
                 }
             })}
-        </>
+        </div>
     )
 }
 
