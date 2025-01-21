@@ -103,7 +103,7 @@ const DoctorCard: React.FC<DoctorCardI> = ({
 const FindADoctor: React.FC<FindADoctorI> = ({
     title
 }) => {
-    const { doctor } = use(collectionDataFetch('doctor'))
+    const { doctor } = use(collectionDataFetch('doctor')) as {doctor: DoctorCardI[]}
     return (
         <ul className='mt-20'>
             <SectionSpacing>
