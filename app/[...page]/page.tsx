@@ -16,7 +16,7 @@ export default function DynamicPage() {
         <PageMarginWrapper>
             <section
                 className={cx('mt-20 px-5',{
-                    ['flex']: sidebar?.length > 0
+                    ['flex gap-5']: sidebar?.length > 0
                 })}
             >
                 <section
