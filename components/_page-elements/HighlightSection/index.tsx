@@ -16,9 +16,7 @@ export const Highlight: React.FC<HighlightI> = ({
     link_label
 }) => {
     return (
-        <div
-            className='max-w-60'
-        >
+        <>
             <Image
                 src={image}
                 alt={title}
@@ -42,7 +40,7 @@ export const Highlight: React.FC<HighlightI> = ({
             >
                 {link_label}
             </Link>
-        </div>
+        </>
     )
 }
 
@@ -99,14 +97,18 @@ const HighlightSection: React.FC<HighlightSectionI> = ({
                         className={`grid gap-4 p-4 grid-cols-${itemsPerSlide} max-w-fit mx-auto`}
                     >
                         {slide.map((highlight) => (
-                            <Highlight
+                            <div
                                 key={highlight?.meta?.id}
-                                title={highlight?.title}
-                                excerpt={highlight?.excerpt}
-                                image={highlight?.image}
-                                link={highlight?.link}
-                                link_label={highlight?.link_label}
-                            />
+                                className='max-w-60'
+                            >
+                                <Highlight
+                                    title={highlight?.title}
+                                    excerpt={highlight?.excerpt}
+                                    image={highlight?.image}
+                                    link={highlight?.link}
+                                    link_label={highlight?.link_label}
+                                />
+                            </div>
                         ))}
                     </div>
                 ))}
