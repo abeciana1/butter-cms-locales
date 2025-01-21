@@ -4,6 +4,7 @@ import { headers } from 'next/headers';
 import Image from 'next/image'
 import ComponentRenderer from '@/components/ComponentRender'
 import { NavigationLinkI, NavBarI } from '@/definitions/interfaces/_navigation'
+import Link from 'next/link'
 
 const NavBar = () => {
     const headersList = use(headers());
@@ -15,12 +16,17 @@ const NavBar = () => {
     return (
         <>
             <nav className='flex relative justify-between items-center py-2 px-5'>
-                <Image
-                    src={fields?.logo?.url}
-                    alt={fields?.logo?.alt}
-                    width={fields?.logo_width}
-                    height={fields?.logo_height}
-                />
+                <Link
+                    href='/'
+                    title='Homepage link'
+                >
+                    <Image
+                        src={fields?.logo?.url}
+                        alt={fields?.logo?.alt}
+                        width={fields?.logo_width}
+                        height={fields?.logo_height}
+                    />
+                </Link>
                 <ul
                     className='flex gap-7 items-center'
                 >
