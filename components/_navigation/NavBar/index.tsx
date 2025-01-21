@@ -1,5 +1,5 @@
 import { use } from 'react'
-import { getMainMenu } from '@/lib/butter'
+import { getNavMenu } from '@/lib/butter'
 import { headers } from 'next/headers';
 import Image from 'next/image'
 import ComponentRenderer from '@/components/ComponentRender'
@@ -9,7 +9,7 @@ import Link from 'next/link'
 const NavBar = () => {
     const headersList = use(headers());
     const isPreview = headersList.get("x-search-param")
-    const navContent = use(getMainMenu(isPreview as string))
+    const navContent = use(getNavMenu(isPreview as string, 'main-menu'))
     const {
         fields
     } = navContent?.data as NavBarI
