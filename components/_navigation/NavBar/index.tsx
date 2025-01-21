@@ -9,7 +9,7 @@ import Link from 'next/link'
 const NavBar = () => {
     const headersList = use(headers());
     const isPreview = headersList.get("x-search-param")
-    const navContent = use(getNavMenu(isPreview as string, 'main-menu'))
+    const navContent = use(getNavMenu(isPreview as string, 'navigation_menu', 'main-menu'))
     const {
         fields
     } = navContent?.data as NavBarI
