@@ -9,7 +9,7 @@ export const pageDataFetch = () => {
   const headersList = use(headers());
   const isPreview = headersList.get("x-search-param")
   const path = headersList.get("x-pathname")
-  const pageContent = use(getPageData(isPreview as string, path))
+  const pageContent = use(getPageData(isPreview as string, path as string))
   return pageContent
 }
 
