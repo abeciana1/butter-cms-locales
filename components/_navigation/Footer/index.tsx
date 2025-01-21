@@ -1,6 +1,7 @@
 import { use } from 'react'
 import { getNavMenu } from '@/lib/butter'
 import { headers } from 'next/headers';
+import Link from 'next/link'
 
 const Footer = () => {
     const headersList = use(headers());
@@ -19,7 +20,7 @@ const Footer = () => {
     } = navContent?.data?.fields
 
     return (
-        <footer className='bg-lightGrey mt-12 pt-20'></footer>
+        <footer className='bg-lightGrey mt-12 pt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'></footer>
     )
 }
 
