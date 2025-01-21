@@ -20,7 +20,7 @@ export const Highlight: React.FC<HighlightI> = ({
             <Image
                 src={image}
                 alt={title}
-                width={240}
+                width={280}
                 height={145}
                 className='pb-5'
             />
