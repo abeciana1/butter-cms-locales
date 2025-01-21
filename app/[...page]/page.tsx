@@ -10,7 +10,7 @@ export default function DynamicPage() {
     const {
         sidebar,
         body
-    } = pageData?.data?.fields
+    } = pageData?.data?.fields as any
     return (
     <main>
         <PageMarginWrapper>
