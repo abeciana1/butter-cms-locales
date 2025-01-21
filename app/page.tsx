@@ -22,7 +22,7 @@ export default function Home() {
   const pageData = pageDataFetch()
   const {
     body
-  } = pageData?.data?.fields
+  } = pageData?.data?.fields as any
   return (
     <main>
       <PageMarginWrapper>
