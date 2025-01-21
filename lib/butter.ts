@@ -9,8 +9,8 @@ catch (e) {
   console.log(e)
 }
 
-export const getNavMenu = (isPreview: string, modelName: string) => {
-    return butter.page.retrieve('navigation_menu', modelName, {
+export const getNavMenu = (isPreview: string, modelName: string, slug: string) => {
+    return butter.page.retrieve(modelName, slug, {
       preview: isPreview === 'preview=1' ? 1 : 0,
       alt_media_text: 1
     })
