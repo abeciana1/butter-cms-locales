@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import cx from 'classnames'
 
-const Highlight: React.FC<HighlightI> = ({
+export const Highlight: React.FC<HighlightI> = ({
     title,
     excerpt,
     image,
