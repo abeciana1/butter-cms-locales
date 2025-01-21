@@ -1,5 +1,5 @@
 import { ButterImage } from '@/definitions/interfaces/general'
-import { PressReleaseCardI } from '@/definitions/interfaces/_section'
+import { PressReleaseCardI, HighlightI } from '@/definitions/interfaces/_section'
 
 export interface SidebarLinkI {
     link: string;
@@ -53,4 +53,8 @@ export interface SidebarNewsItemsGroupI {
     collectionData: {
         press_release_teaser: PressReleaseCardI[];
     };
+}
+
+export interface SidebarHighlightsI {
+    highlights: HighlightI[];
 }
