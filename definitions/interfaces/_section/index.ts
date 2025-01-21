@@ -123,3 +123,9 @@ export interface DoctorCardI {
         id: number
     };
 }
+
+export interface ImageSectionI {
+    image: ButterImage;
+    imageHeight: number;
+    imageWidth: number;
+}
