@@ -7,8 +7,19 @@ const Footer = () => {
     const isPreview = headersList.get("x-search-param")
     const navContent = use(getNavMenu(isPreview as string, 'footer_menu', 'footer-menu'))
     console.log('navContent', navContent)
+
+    const {
+        medical_center_name,
+        address,
+        phone,
+        social_links,
+        policy_links,
+        link,
+        nondiscrimination_notice
+    } = navContent?.data?.fields
+
     return (
-        <footer></footer>
+        <footer className='bg-lightGrey mt-12 pt-20'></footer>
     )
 }
 
