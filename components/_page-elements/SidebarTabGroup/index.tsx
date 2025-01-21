@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
     SidebarTabGroupI,
     SidebarTabI,
@@ -13,8 +13,10 @@ import { collectionDataFetch } from '@/lib/butter'
 import TextContent from '@/components/_styled/TextContent'
 import { ColorE, FontWeightE, FontSizeE } from '@/definitions/enums'
 import Link from 'next/link'
+import SidebarNewsItemsGroup from '@/components/_styled/SidebarNewsItemsGroup'
 
 const SidebarTab: React.FC<SidebarTabI> = ({
+    sidebar_icon,
     reference_collection,
     reference_dropdown,
     limit_on_reference_result,
@@ -26,9 +28,16 @@ const SidebarTab: React.FC<SidebarTabI> = ({
     wysiwyg_content,
     text_content
 }) => {
-    // const referenceData = reference_collection ? use(collectionDataFetch(reference_dropdown, limit_on_reference_result)) : null
-    // console.log('referenceData fetched', referenceData)
-    console.log('information_tab,', information_tab)
+    const [ collectionData, setData ] = useState<any>([])
+    useEffect(() => {
+        if (reference_collection) {
+            const referenceData = async () => {
+                const content = await collectionDataFetch(reference_dropdown, limit_on_reference_result)
+                setData(content)
+            }
+            referenceData()
+        }
+    }, [sidebar_icon?.url])
     return (
         <div
             className='py-10 px-5'
@@ -41,8 +50,8 @@ const SidebarTab: React.FC<SidebarTabI> = ({
                     link_text={link_text}
                 />
             }
-            {reference_collection &&
-                <div />
+            {(reference_collection && collectionData[reference_dropdown]?.length > 0) &&
+                <SidebarNewsItemsGroup collectionData={collectionData} />
             }
             {wysiwyg_content &&
                 <HTMLContent textContent={text_content} />
@@ -128,15 +137,13 @@ const SidebarTabGroup: React.FC<SidebarTabGroupI> = ({
                 >
                     {tabs?.map((tab: SidebarTabI, index: number) => {
                         return (
-                            <>
-                                <SidebarTabButton
-                                    key={tab?.sidebar_icon?.url + index}
-                                    sidebar_icon={tab?.sidebar_icon}
-                                    onClick={setActive}
-                                    index={index}
-                                    activeIdx={activeIdx}
-                                />
-                            </>
+                            <SidebarTabButton
+                                key={tab?.sidebar_icon?.url + index}
+                                sidebar_icon={tab?.sidebar_icon}
+                                onClick={setActive}
+                                index={index}
+                                activeIdx={activeIdx}
+                            />
                         )
                     })}
                 </div>
