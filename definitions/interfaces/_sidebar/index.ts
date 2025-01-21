@@ -1,4 +1,5 @@
 import { ButterImage } from '@/definitions/interfaces/general'
+import { PressReleaseCardI } from '@/definitions/interfaces/_section'
 
 export interface SidebarLinkI {
     link: string;
@@ -40,4 +41,16 @@ export interface SidebarButtonI {
     onClick: (arg: number) => void;
     index: number;
     activeIdx: number;
+}
+
+export interface SidebarNewsItemI {
+    title: string;
+    date: string;
+    link: string;
+}
+
+export interface SidebarNewsItemsGroupI {
+    collectionData: {
+        press_release_teaser: PressReleaseCardI[];
+    };
 }
