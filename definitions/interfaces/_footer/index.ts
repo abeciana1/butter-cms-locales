@@ -10,7 +10,7 @@ export interface FooterDataI {
     phone: number;
     nondiscrimination_notice: string;
     policy_links: PolicyLinkI[];
-    social_links: SocialLinksI;
+    social_links: SocialLinkI;
     links: LinkFieldsI[];
 }
 
@@ -40,6 +40,9 @@ export interface SocialLinkI {
     twitter_username: string;
 }
 
-export interface SocialLinksI {
-    data: SocialLinkI;
+export interface SocialButtonLinkI {
+    link: string;
+    facebook?: boolean;
+    instagram?: boolean;
+    twitter?: boolean;
 }
