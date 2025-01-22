@@ -1,12 +1,11 @@
 import { use } from 'react'
 import { getPageData } from '@/lib/butter'
 import { headers } from 'next/headers';
-import type { Metadata } from 'next'
+// import type { Metadata } from 'next'
 import ComponentRenderer from '@/components/ComponentRender'
 import { PageMarginWrapper } from '@/components/_layouts'
 
-export const pageDataFetch = () => {
-  const headersList = use(headers());
+export const pageDataFetch = (headersList: any) => {
   const isPreview = headersList.get("x-search-param")
   const path = headersList.get("x-pathname")
   const pageContent = use(getPageData(isPreview as string, path as string))
@@ -19,7 +18,8 @@ export const pageDataFetch = () => {
 // }
 
 export default function Home() {
-  const pageData = pageDataFetch()
+  const headersList = use(headers());
+  const pageData = pageDataFetch(headersList)
   const {
     body
   } = pageData?.data?.fields as any

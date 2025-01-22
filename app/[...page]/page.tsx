@@ -1,11 +1,14 @@
-import type { Metadata } from 'next'
+// import type { Metadata } from 'next'
 import ComponentRenderer from '@/components/ComponentRender'
 import { PageMarginWrapper } from '@/components/_layouts'
 import { pageDataFetch } from '@/app/page'
+import { headers } from 'next/headers';
+import { use } from 'react'
 import cx from 'classnames'
 
 export default function DynamicPage() {
-    const pageData = pageDataFetch()
+    const headersList = use(headers());
+    const pageData = pageDataFetch(headersList)
     console.log('DynamicPage body', pageData)
     const {
         sidebar,
