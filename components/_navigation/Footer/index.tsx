@@ -7,6 +7,8 @@ import Nondiscrimination from '@/components/_footer/Nondiscrimination'
 import TextContent from '@/components/_styled/TextContent';
 import { ColorE, FontSizeE, FontWeightE } from '@/definitions/enums';
 import { FooterDataI } from '@/definitions/interfaces/_footer'
+import { NavigationLinkFieldI } from '@/definitions/interfaces/_navigation'
+import FooterNavigationLink from '@/components/_footer/FooterNavigationLinks'
 
 const Footer = () => {
     const headersList = use(headers());
@@ -53,7 +55,11 @@ const Footer = () => {
                         />
                     </div>
                 </section>
-                {}
+                {links?.map((link: NavigationLinkFieldI, index: number) => {
+                    return (
+                        <FooterNavigationLink key={index} navLink={link} />
+                    )
+                })}
             </section>
             <Nondiscrimination text={nondiscrimination_notice} />
         </footer>
