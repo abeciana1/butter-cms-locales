@@ -8,6 +8,7 @@ import TextContent from '@/components/_styled/TextContent';
 import { ColorE, FontSizeE, FontWeightE } from '@/definitions/enums';
 import { FooterDataI, LinkFieldsI } from '@/definitions/interfaces/_footer'
 import FooterNavigationLink from '@/components/_footer/FooterNavigationLinks'
+import SocialLinks from '@/components/_footer/SocialLinks'
 
 const Footer = () => {
     const headersList = use(headers());
@@ -18,7 +19,7 @@ const Footer = () => {
         medical_center_name,
         address,
         phone,
-        // social_links,
+        social_links,
         policy_links,
         links,
         nondiscrimination_notice
@@ -41,6 +42,16 @@ const Footer = () => {
                     <div className='font-bold text-sm text-black'>
                         {phone}
                     </div>
+                    {social_links &&
+                        <SocialLinks
+                            facebook={social_links?.facebook}
+                            facebook_username={social_links?.facebook_username}
+                            instagram={social_links?.instagram}
+                            instagram_username={social_links?.instagram_username}
+                            twitter={social_links?.twitter}
+                            twitter_username={social_links?.twitter_username}
+                        />
+                    }
                     {(policy_links && policy_links?.length > 0) &&
                         <PolicyLinkSection links={policy_links} />
                     }
@@ -54,7 +65,6 @@ const Footer = () => {
                     </div>
                 </section>
                 {links?.map((link: LinkFieldsI, index: number) => {
-                    console.log('link', link)
                     return (
                         <FooterNavigationLink key={index} navLink={link} />
                     )
