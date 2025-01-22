@@ -1,5 +1,13 @@
 import { NavigationLinkFieldI } from '@/definitions/interfaces/_navigation'
 
+interface LinkFieldsI {
+    fields: NavigationLinkFieldI;
+}
+
+export interface FooterLinksMap {
+    link: LinkFieldsI;
+}
+
 export interface FooterDataI {
     medical_center_name: string;
     address: number;
@@ -7,13 +15,11 @@ export interface FooterDataI {
     nondiscrimination_notice: string;
     policy_links: PolicyLinkI[];
     social_links: SocialLinksI;
-    links: NavigationLinkFieldI[];
+    links: FooterLinksMap[];
 }
 
 export interface FooterNavigationLinkI {
-    navLink: {
-        fields: NavigationLinkFieldI;
-    };
+    navLink: FooterLinksMap
 }
 
 export interface PolicyLinkI {
