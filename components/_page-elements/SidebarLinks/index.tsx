@@ -1,5 +1,4 @@
 import { SidebarLinksI, SidebarLinkI } from '@/definitions/interfaces/_sidebar'
-import cx from 'classnames'
 import Link from 'next/link'
 
 const SidebarLink: React.FC<SidebarLinkI> = ({

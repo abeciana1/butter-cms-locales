@@ -6,7 +6,6 @@ import { ColorE, FontWeightE } from '@/definitions/enums'
 import Slider from '@/components/_styled/Slider'
 import Link from 'next/link'
 import Image from 'next/image'
-import cx from 'classnames'
 
 export const Highlight: React.FC<HighlightI> = ({
     title,
