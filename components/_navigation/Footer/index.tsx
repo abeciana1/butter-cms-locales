@@ -18,7 +18,7 @@ const Footer = () => {
         medical_center_name,
         address,
         phone,
-        social_links,
+        // social_links,
         policy_links,
         links,
         nondiscrimination_notice
