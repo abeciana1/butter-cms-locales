@@ -4,10 +4,6 @@ export interface LinkFieldsI {
     fields: NavigationLinkFieldI;
 }
 
-export interface FooterLinksMap {
-    link: LinkFieldsI;
-}
-
 export interface FooterDataI {
     medical_center_name: string;
     address: number;
