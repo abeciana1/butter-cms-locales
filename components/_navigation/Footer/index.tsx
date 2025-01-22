@@ -41,9 +41,6 @@ const Footer = () => {
                     <div className='font-bold text-sm text-darkGrey'>
                         {phone}
                     </div>
-                    {(social_links && social_links?.length > 0) &&
-                        <></>
-                    }
                     {(policy_links && policy_links?.length > 0) &&
                         <PolicyLinkSection links={policy_links} />
                     }
