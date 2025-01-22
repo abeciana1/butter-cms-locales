@@ -9,7 +9,7 @@ const PolicyLink: React.FC<PolicyLinkI> = ({
         <li>
             <Link
                 href={link}
-                className='font-medium text-sm leading-3'
+                className='text-sm leading-3 text-black'
             >
                 {link_label}
             </Link>
