@@ -13,7 +13,7 @@ export const getNavMenu = (isPreview: string, modelName: string, slug: string) =
     return butter.page.retrieve(modelName, slug, {
       preview: isPreview === 'preview=1' ? 1 : 0,
       alt_media_text: 1
-    })
+    } as any)
     .then(function(resp) {
         return resp.data
     })
@@ -28,7 +28,7 @@ export const getPageData = (isPreview: string, slug: string) => {
     preview: isPreview === 'preview=1' ? 1 : 0,
     alt_media_text: 1,
     levels: 3
-  })
+  } as any)
   .then(function(resp) {
       return resp.data
   })
@@ -42,7 +42,7 @@ export const collectionDataFetch = (modelName: string, page_size: number = 10, p
     page_size: page_size,
     page: page,
     alt_media_text: 1,
-  })
+  } as any)
   .then(function(resp) {
       return resp?.data?.data
   })
