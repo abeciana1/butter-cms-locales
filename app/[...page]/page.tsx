@@ -20,7 +20,6 @@ export const generateMetadata = async (
     const {
       seo
     } = pageData?.data?.fields as any
-    console.log({ seo })
     return {
       title: seo?.title,
       description: seo?.description,
