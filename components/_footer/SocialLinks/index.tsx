@@ -39,7 +39,7 @@ const SocialLinks: React.FC<SocialLinkI> = ({
     twitter_username
 }) => {
     return (
-        <div className='flex flex-wrap gap-5'>
+        <div className='flex flex-wrap gap-5 mt-8'>
             {facebook &&
                 <SocialButtonLink
                     facebook={facebook}
