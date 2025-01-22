@@ -4,7 +4,7 @@ const FooterNavigationLink: React.FC<FooterNavigationLinkI> = ({
     navLink
 }) => {
     return (
-        <ul></ul>
+        <section></section>
     )
 }
 
