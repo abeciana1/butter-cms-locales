@@ -11,7 +11,9 @@ export interface FooterDataI {
 }
 
 export interface FooterNavigationLinkI {
-    navLink: NavigationLinkFieldI;
+    navLink: {
+        fields: NavigationLinkFieldI;
+    };
 }
 
 export interface PolicyLinkI {
