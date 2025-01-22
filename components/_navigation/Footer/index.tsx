@@ -6,6 +6,7 @@ import PolicyLinkSection from '@/components/_footer/PolicyLinks'
 import Nondiscrimination from '@/components/_footer/Nondiscrimination'
 import TextContent from '@/components/_styled/TextContent';
 import { ColorE, FontSizeE, FontWeightE } from '@/definitions/enums';
+import { FooterDataI } from '@/definitions/interfaces/_footer'
 
 const Footer = () => {
     const headersList = use(headers());
@@ -21,7 +22,7 @@ const Footer = () => {
         policy_links,
         links,
         nondiscrimination_notice
-    } = navContent?.data?.fields
+    } = navContent?.data?.fields as FooterDataI
 
     return (
         <footer className='bg-lightGrey mt-12 pt-20'>
@@ -55,6 +56,7 @@ const Footer = () => {
                         />
                     </div>
                 </section>
+                {}
             </section>
             <Nondiscrimination text={nondiscrimination_notice} />
         </footer>
