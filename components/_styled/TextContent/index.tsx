@@ -16,6 +16,7 @@ const TextContent: React.FC<TextContentI> = ({
                 ['text-grey']: color === ColorE.GREY,
                 ['text-darkGrey']: color === ColorE.DARKGREY,
                 ['text-blue']: color === ColorE.BLUE,
+                ['text-black']: color === ColorE.BLACK,
                 ['text-blue-light']: color === ColorE.LIGHTBLUE,
                 ['font-light']: fontWeight === FontWeightE.LIGHT,
                 ['font-medium']: fontWeight === FontWeightE.MEDIUM,
