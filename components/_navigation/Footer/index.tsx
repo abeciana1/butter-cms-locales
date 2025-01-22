@@ -6,8 +6,7 @@ import PolicyLinkSection from '@/components/_footer/PolicyLinks'
 import Nondiscrimination from '@/components/_footer/Nondiscrimination'
 import TextContent from '@/components/_styled/TextContent';
 import { ColorE, FontSizeE, FontWeightE } from '@/definitions/enums';
-import { FooterDataI } from '@/definitions/interfaces/_footer'
-import { NavigationLinkFieldI } from '@/definitions/interfaces/_navigation'
+import { FooterDataI, FooterLinksMap } from '@/definitions/interfaces/_footer'
 import FooterNavigationLink from '@/components/_footer/FooterNavigationLinks'
 
 const Footer = () => {
@@ -54,7 +53,8 @@ const Footer = () => {
                         />
                     </div>
                 </section>
-                {links?.map((link: NavigationLinkFieldI, index: number) => {
+                {links?.map((link: FooterLinksMap, index: number) => {
+                    console.log('link', link)
                     return (
                         <FooterNavigationLink key={index} navLink={link} />
                     )
