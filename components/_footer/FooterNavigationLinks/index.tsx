@@ -46,7 +46,6 @@ const FooterNavigationLink: React.FC<FooterNavigationLinkI> = ({
                     style={{ marginInlineStart: '-15px' }}
                 >
                     {subsection_links?.map((link: SubsectionLinkI) => {
-                        console.log('link', link)
                         return (
                             <FooterNavigationSubLinks
                                 key={link?.meta?.id}
