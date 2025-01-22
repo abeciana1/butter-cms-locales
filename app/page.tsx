@@ -1,14 +1,39 @@
 import { use } from 'react'
 import { getPageData } from '@/lib/butter'
 import { headers } from 'next/headers';
-// import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import ComponentRenderer from '@/components/ComponentRender'
 import { PageMarginWrapper } from '@/components/_layouts'
+import { PageProps } from '@/definitions/interfaces/general'
 
-// export const metadata: Metadata = () => {
-//   const data = pageDataFetch()
-//   console.log('data', data)
-// }
+export const generateMetadata = async (
+  {searchParams}: PageProps
+): Promise<Metadata> => {
+  const resolvedSearchParams = await searchParams;
+  const headersList = await headers()
+  const path = headersList.get("x-pathname")
+  const isPreview =
+    (typeof resolvedSearchParams?.preview === 'string' &&
+    resolvedSearchParams.preview === '1') ? 'preview=1' : ''
+  const pageData = await getPageData(isPreview, path as string)
+  const {
+    seo
+  } = pageData?.data?.fields as any
+  return {
+    title: seo?.title,
+    description: seo?.description,
+    openGraph: {
+      title: seo?.title,
+      description: seo?.description,
+      url: `https://butter-chs-demo-3j7c.vercel.app${path}`,
+      images: [
+        {
+          url: seo?.open_graph_image?.url
+        }
+      ]
+    }
+  }
+}
 
 export default function Home() {
   const headersList = use(headers());
