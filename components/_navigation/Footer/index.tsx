@@ -14,7 +14,6 @@ const Footer = () => {
     const headersList = use(headers());
     const isPreview = headersList.get("x-search-param")
     const navContent = use(getNavMenu(isPreview as string, 'footer_menu', 'footer-menu'))
-    console.log('navContent', navContent)
 
     const {
         medical_center_name,
