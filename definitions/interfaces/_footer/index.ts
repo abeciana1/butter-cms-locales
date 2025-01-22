@@ -1,6 +1,6 @@
 import { NavigationLinkFieldI } from '@/definitions/interfaces/_navigation'
 
-interface LinkFieldsI {
+export interface LinkFieldsI {
     fields: NavigationLinkFieldI;
 }
 
@@ -15,11 +15,11 @@ export interface FooterDataI {
     nondiscrimination_notice: string;
     policy_links: PolicyLinkI[];
     social_links: SocialLinksI;
-    links: FooterLinksMap[];
+    links: LinkFieldsI[];
 }
 
 export interface FooterNavigationLinkI {
-    navLink: FooterLinksMap
+    navLink: LinkFieldsI;
 }
 
 export interface PolicyLinkI {
