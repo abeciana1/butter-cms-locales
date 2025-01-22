@@ -1,19 +1,20 @@
 // import type { Metadata } from 'next'
 import ComponentRenderer from '@/components/ComponentRender'
 import { PageMarginWrapper } from '@/components/_layouts'
-import { pageDataFetch } from '@/app/page'
 import { headers } from 'next/headers';
 import { use } from 'react'
 import cx from 'classnames'
+import { getPageData } from '@/lib/butter'
 
 export default function DynamicPage() {
     const headersList = use(headers());
-    const pageData = pageDataFetch(headersList)
-    console.log('DynamicPage body', pageData)
+    const isPreview = headersList.get("x-search-param")
+    const path = headersList.get("x-pathname")
+    const pageContent = use(getPageData(isPreview as string, path as string))
     const {
         sidebar,
         body
-    } = pageData?.data?.fields as any
+    } = pageContent?.data?.fields as any
     return (
     <main>
         <PageMarginWrapper>

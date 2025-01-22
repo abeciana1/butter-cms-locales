@@ -5,13 +5,6 @@ import { headers } from 'next/headers';
 import ComponentRenderer from '@/components/ComponentRender'
 import { PageMarginWrapper } from '@/components/_layouts'
 
-export const pageDataFetch = (headersList: any) => {
-  const isPreview = headersList.get("x-search-param")
-  const path = headersList.get("x-pathname")
-  const pageContent = use(getPageData(isPreview as string, path as string))
-  return pageContent
-}
-
 // export const metadata: Metadata = () => {
 //   const data = pageDataFetch()
 //   console.log('data', data)
@@ -19,10 +12,12 @@ export const pageDataFetch = (headersList: any) => {
 
 export default function Home() {
   const headersList = use(headers());
-  const pageData = pageDataFetch(headersList)
+  const isPreview = headersList.get("x-search-param")
+  const path = headersList.get("x-pathname")
+  const pageContent = use(getPageData(isPreview as string, path as string))
   const {
     body
-  } = pageData?.data?.fields as any
+  } = pageContent?.data?.fields as any
   return (
     <main>
       <PageMarginWrapper>
