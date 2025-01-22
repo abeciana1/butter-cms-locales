@@ -14,9 +14,9 @@ const PressReleaseCard: React.FC<PressReleaseCardI> = ({
     link
 }) => {
     return (
-        <div className=''>
+        <div className='max-w-fit relative'>
             <div
-                className='border-grey border-t-2 border-x-2 p-12 h-[400px]'
+                className='border-grey border-t-2 border-x-2 p-12 h-[400px] max-w-[378px]'
             >
                 <Link
                     href={link || '/'}
@@ -62,7 +62,7 @@ const PressReleaseSection: React.FC<PressReleaseSectionI> = ({
                     fontWeight={FontWeightE.NORMAL}
                 />
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8'>
+            <div className='grid gap-5 mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative mx-auto'>
                 {pressReleases?.map((press: PressReleaseCardI) => {
                     return (
                         <PressReleaseCard
