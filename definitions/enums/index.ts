@@ -4,7 +4,8 @@ export enum ColorE {
     GREY = 'GREY',
     DARKGREY = 'DARKGREY',
     BLUE = 'BLUE',
-    LIGHTBLUE = 'LIGHTBLUE'
+    LIGHTBLUE = 'LIGHTBLUE',
+    BLACK = 'BLACK'
 }
 
 export enum FontWeightE {
