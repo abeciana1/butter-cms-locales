@@ -26,8 +26,8 @@ const Footer = () => {
 
     return (
         <footer className='bg-lightGrey mt-12 pt-20'>
-            <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-32 gap-10'>
-                <section>
+            <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-32 gap-10 place-content-evenly'>
+                <section className='max-w-64'>
                     <Link
                         href='/'
                         className='text-blue hover:text-navy text-xl font-medium'
