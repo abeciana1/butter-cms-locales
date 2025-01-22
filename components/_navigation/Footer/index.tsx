@@ -35,10 +35,10 @@ const Footer = () => {
                     >
                         {medical_center_name}
                     </Link>
-                    <div className='space-y-1'>
+                    <div className='space-y-1 text-black'>
                         {address}
                     </div>
-                    <div className='font-bold text-sm text-darkGrey'>
+                    <div className='font-bold text-sm text-black'>
                         {phone}
                     </div>
                     {(policy_links && policy_links?.length > 0) &&
@@ -48,8 +48,8 @@ const Footer = () => {
                         <TextContent
                             text={`Copyright ©${new Date().getFullYear()}. All rights reserved.`}
                             fontSize={FontSizeE.SM}
-                            fontWeight={FontWeightE.MEDIUM}
-                            color={ColorE.DARKGREY}
+                            fontWeight={FontWeightE.NORMAL}
+                            color={ColorE.BLACK}
                         />
                     </div>
                 </section>
