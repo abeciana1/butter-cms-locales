@@ -19,13 +19,13 @@ const Footer = () => {
         phone,
         social_links,
         policy_links,
-        link,
+        links,
         nondiscrimination_notice
     } = navContent?.data?.fields
 
     return (
-        <footer className='bg-lightGrey mt-12 pt-20 px-32'>
-            <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+        <footer className='bg-lightGrey mt-12 pt-20'>
+            <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-32'>
                 <section>
                     <Link
                         href='/'
