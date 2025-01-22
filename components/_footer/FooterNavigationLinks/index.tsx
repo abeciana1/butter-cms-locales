@@ -1,6 +1,8 @@
 import { FooterNavigationLinkI } from '@/definitions/interfaces/_footer'
+import { SubsectionLinkI } from '@/definitions/interfaces/_navigation'
+import Link from 'next/link'
 
-const FooterNavigationSubLinks = () => {
+const FooterNavigationSubLinks: React.FC<SubsectionLinkI> = () => {
     return (
         <></>
     )
@@ -9,9 +11,25 @@ const FooterNavigationSubLinks = () => {
 const FooterNavigationLink: React.FC<FooterNavigationLinkI> = ({
     navLink
 }) => {
-    console.log('navLink', navLink)
+    const {
+        label,
+        url,
+        subsection_links
+    } = navLink?.fields
     return (
-        <section></section>
+        <section>
+            <Link
+                href={url || '/'}
+                className='text-blue hover:text-navy font-medium text-xl'
+            >
+                {label}
+            </Link>
+            {(subsection_links && subsection_links?.length > 0) &&
+                <ul>
+
+                </ul>
+            }
+        </section>
     )
 }
 
