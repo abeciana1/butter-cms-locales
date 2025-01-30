@@ -1,6 +1,9 @@
 import DOMPurify from 'isomorphic-dompurify';
-import { HTMLContentI } from '@/definitions/interfaces/_styled'
 import '@/components/_styled/HTMLContent/html-content.css'
+
+interface HTMLContentI {
+    textContent: string;
+}
 
 const HTMLContent: React.FC<HTMLContentI> = ({
     textContent
