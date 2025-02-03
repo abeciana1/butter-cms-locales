@@ -28,8 +28,8 @@ const Feature: React.FC<FeatureI> = ({
                     width={80}
                     height={80}
                     className={cx({
-                        ['bg-blue']: !hover,
-                        ['bg-navy']: hover
+                        ['bg-primary']: !hover,
+                        ['bg-secondary']: hover
                     })}
                 />
             </Link>
@@ -37,13 +37,13 @@ const Feature: React.FC<FeatureI> = ({
                 <Link
                     href={link || '/'}
                     className={cx('text-xl',{
-                        ['text-navy']: !hover,
-                        ['text-blue']: hover
+                        ['text-secondary']: !hover,
+                        ['text-prmary']: hover
                     })}
                 >
                     {title}
                 </Link>
-                <div className='text-darkGrey font-medium max-w-48'>
+                <div className='text-shades-darkGrey font-medium max-w-48'>
                     {about}
                 </div>
             </div>

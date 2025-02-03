@@ -15,7 +15,7 @@ const SocialButtonLink: React.FC<SocialButtonLinkI> = ({
     return (
         <Link
             href={link}
-            className='text-white bg-blue hover:bg-navy h-11 w-11 rounded-full flex items-center justify-center'
+            className='text-background bg-primary hover:bg-secondary h-11 w-11 rounded-full flex items-center justify-center'
         >
             {facebook &&
                 <TiSocialFacebook size={40} />

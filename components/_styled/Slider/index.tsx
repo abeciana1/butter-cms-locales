@@ -24,7 +24,7 @@ const Slider: React.FC<PageMarginI> = ({ children }) => {
     <div className="flex flex-col items-center relative w-full">
       <div className="flex items-center relative w-full overflow-hidden">
         <button
-          className="z-40 absolute left-2 top-1/2 transform -translate-y-1/2 text-grey bg-[#888888] p-2 rounded-full shadow hover:bg-gray-300 hover:text-darkGrey"
+          className="z-40 absolute left-2 top-1/2 transform -translate-y-1/2 text-shades-darkGrey bg-shades-silver p-2 rounded-full"
           onClick={prevSlide}
         >
           <FaChevronLeft/>
@@ -45,7 +45,7 @@ const Slider: React.FC<PageMarginI> = ({ children }) => {
         </div>
 
         <button
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 text-grey bg-[#888888] p-2 rounded-full shadow hover:bg-gray-300 hover:text-darkGrey"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 text-shades-darkGrey bg-shades-silver p-2 rounded-full"
           onClick={nextSlide}
         >
           <FaChevronRight />

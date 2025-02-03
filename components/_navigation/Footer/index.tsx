@@ -26,7 +26,7 @@ const Footer = () => {
     } = navContent?.data?.fields as FooterDataI
 
     return (
-        <footer className='bg-shades-silver mt-12 pt-20'>
+        <footer className='bg-grey mt-12 pt-20'>
             <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-32 gap-10 place-content-evenly'>
                 <section className='max-w-64'>
                     <Link
