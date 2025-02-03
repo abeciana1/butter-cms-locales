@@ -21,7 +21,7 @@ const DoctorCard: React.FC<DoctorCardI> = ({
     zip_code
 }) => {
     return (
-        <div className='relative border-2 border-grey p-8 max-w-[825px]'>
+        <div className='relative border-2 border-shades-silver p-8 max-w-[825px]'>
             <div className='flex gap-5'>
                 <Image
                     src={headshot?.url}
@@ -34,12 +34,12 @@ const DoctorCard: React.FC<DoctorCardI> = ({
                     <h2 className='text-3xl'>
                         <Link
                             href={doc_page_link}
-                            className='text-navy hover:text-blue'
+                            className='text-secondary hover:text-primary'
                         >
                             {name}
                         </Link>
                     </h2>
-                    <hr className='border-[1px] border-grey my-5'/>
+                    <hr className='border-[1px] border-shades-silver my-5'/>
                     <div className='flex flex-col text-right justify-between'>
                         <div>
                             <TextContent
@@ -88,7 +88,7 @@ const DoctorCard: React.FC<DoctorCardI> = ({
                         <div className='flex justify-end'>
                             <Link
                                 href={map_link}
-                                className='text-blue hover:text-navy font-bold text-xl mt-8 max-w-fit text-right'
+                                className='text-primary hover:text-secondary font-bold text-xl mt-8 max-w-fit text-right'
                             >
                                 View Map
                             </Link>
@@ -109,7 +109,7 @@ const FindADoctor: React.FC<FindADoctorI> = ({
             <SectionSpacing>
                 <Heading1
                     text={title}
-                    color={ColorE.NAVY}
+                    color={ColorE.PRIMARY}
                     fontWeight={FontWeightE?.NORMAL}
                 />
                 <section className='mt-9 space-y-10'>

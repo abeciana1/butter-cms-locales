@@ -23,12 +23,12 @@ const HoverLink: React.FC<HoverLinkI> = ({
     return (
         <li
             className={cx('flex items-center h-4',{
-                ['border-r-2 border-blue']: border
+                ['border-r-2 border-primary']: border
             })}
         >
             <Link
                 href={link}
-                className='h-5 pr-2 text-blue hover:text-navy mb-2 font-bold text-lg'
+                className='h-5 pr-2 text-primary hover:text-secondary mb-2 font-bold text-lg'
             >
                 {link_text}
             </Link>
@@ -49,10 +49,10 @@ const LocationCard: React.FC<LocationCardI> = ({
 }) => {
     return (
         <li
-            className='border-2 border-grey relative p-7'
+            className='border-2 border-shades-silver relative p-7'
         >
             <div
-                className='bg-navy text-white font-bold text-xl max-w-fit px-1 py-0.5 absolute top-0 left-0'
+                className='bg-secondary text-background font-bold text-xl max-w-fit px-1 py-0.5 absolute top-0 left-0'
             >
                 {alpha[index as number]}
             </div>
@@ -61,7 +61,7 @@ const LocationCard: React.FC<LocationCardI> = ({
             >
                 <div className='flex flex-col'>
                     <div
-                        className='font-medium text-2xl text-navy mb-4'
+                        className='font-medium text-2xl text-secondary mb-4'
                     >
                         {facility_name}
                     </div>

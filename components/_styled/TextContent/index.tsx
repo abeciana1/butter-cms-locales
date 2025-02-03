@@ -11,13 +11,12 @@ const TextContent: React.FC<TextContentI> = ({
     return (
         <div
             className={cx('relative', {
-                ['text-navy']: color === ColorE.NAVY,
-                ['text-white']: color === ColorE.WHITE,
-                ['text-grey']: color === ColorE.GREY,
-                ['text-darkGrey']: color === ColorE.DARKGREY,
-                ['text-blue']: color === ColorE.BLUE,
-                ['text-black']: color === ColorE.BLACK,
-                ['text-blue-light']: color === ColorE.LIGHTBLUE,
+                ['text-secondary']: color === ColorE.SECONDARY,
+                ['text-background']: color === ColorE.BACKGROUND,
+                ['text-shades-silver']: color === ColorE.SILVER,
+                ['text-shades-darkGrey']: color === ColorE.DARKGREY,
+                ['text-primary']: color === ColorE.PRIMARY,
+                ['text-foreground']: color === ColorE.FOREGROUND,
                 ['font-light']: fontWeight === FontWeightE.LIGHT,
                 ['font-medium']: fontWeight === FontWeightE.MEDIUM,
                 ['font-normal']: fontWeight === FontWeightE.NORMAL,

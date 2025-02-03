@@ -45,7 +45,7 @@ const NavigationLink: React.FC<NavigationLinkFieldI> = ({
                     linkText={label}
                     href={url}
                     fontSize={FontSizeE.XL}
-                    color={ColorE.NAVY}
+                    color={ColorE.SECONDARY}
                     fontWeight={FontWeightE.MEDIUM}
                 />
             </li>

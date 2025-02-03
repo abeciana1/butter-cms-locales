@@ -17,7 +17,7 @@ const SidebarNewsItem: React.FC<SidebarNewsItemI> = ({
         <div className='mb-9'>
             <Link
                 href={link}
-                className='text-navy hover:underline font-bold text-md'
+                className='text-secondary hover:underline font-bold text-md'
             >
                 {title}
             </Link>
@@ -25,7 +25,7 @@ const SidebarNewsItem: React.FC<SidebarNewsItemI> = ({
                 text={format(date, 'MM.dd.y')}
                 fontWeight={FontWeightE.BOLD}
                 fontSize={FontSizeE.SM}
-                color={ColorE.BLUE}
+                color={ColorE.PRIMARY}
             />
         </div>
     )
@@ -48,7 +48,7 @@ const SidebarNewsItemsGroup: React.FC<SidebarNewsItemsGroupI> = ({
             })}
             <Link
                 href='/'
-                className='text-blue hover:text-navy text-md font-medium text-center'
+                className='text-primary hover:text-secondary text-md font-medium text-center'
             >
                 See All News & Press Releases
             </Link>

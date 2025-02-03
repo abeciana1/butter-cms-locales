@@ -10,11 +10,11 @@ const SubNavigationLinks: React.FC<SubNavigationLinksI> = ({
         <div
             className='lg:flex justify-end bg-navy py-1 items-center px-5 hidden'
         >
-            <div className='border-r-[1px] border-white pr-4'>
+            <div className='border-r-[1px] border-background pr-4'>
                 <SiteLink
                     linkText={phoneNumber}
                     href={'/'}
-                    color={ColorE.WHITE}
+                    color={ColorE.BACKGROUND}
                     fontSize={FontSizeE.SM}
                     fontWeight={FontWeightE.MEDIUM}
                 />
@@ -23,12 +23,12 @@ const SubNavigationLinks: React.FC<SubNavigationLinksI> = ({
                 return (
                     <div
                         key={link?.label + index}
-                        className='border-r-[1px] border-white px-4'
+                        className='border-r-[1px] border-background px-4'
                     >
                         <SiteLink
                             linkText={link?.label}
                             href={link?.url || '/'}
-                            color={ColorE.WHITE}
+                            color={ColorE.BACKGROUND}
                             fontSize={FontSizeE.SM}
                             fontWeight={FontWeightE.MEDIUM}
                         />

@@ -16,32 +16,32 @@ const PressReleaseCard: React.FC<PressReleaseCardI> = ({
     return (
         <div className='max-w-fit relative'>
             <div
-                className='border-grey border-t-2 border-x-2 p-12 h-[400px] max-w-[378px]'
+                className='border-shades-silver border-t-2 border-x-2 p-12 h-[400px] max-w-[378px]'
             >
                 <Link
                     href={link || '/'}
-                    className='text-xl text-navy hover:text-blue font-bold'
+                    className='text-xl text-secondary hover:text-primary font-bold'
                 >
                     {title}
                 </Link>
-                <div className='text-darkGrey font-medium my-3 text-md'>
+                <div className='text-shades-darkGrey font-medium my-3 text-md'>
                     {excerpt.substring(0,150) + '...'}
                 </div>
                 <Link
                     href={link || '/'}
-                    className='relative text-lg text-blue hover:text-navy font-bold'
+                    className='relative text-lg text-primary hover:text-secondary font-bold'
                 >
                     {link_label}
                 </Link>
             </div>
             <div
-                className='bg-blue flex items-center'
+                className='bg-primary flex items-center'
             >
-                <div className='text-3xl text-white flex gap-2 bg-navy pl-10 py-1 w-4/5'>
+                <div className='text-3xl text-background flex gap-2 bg-secondary pl-10 py-1 w-4/5'>
                     <span className='font-normal'>{format(date, 'MMM').toUpperCase()}</span>
                     <span className='font-bold'>{format(date, 'dd')}</span>
                 </div>
-                <div className='text-navy -ml-4'>
+                <div className='text-secondary -ml-4'>
                     <BiSolidRightArrow size={35} />
                 </div>
             </div>
@@ -58,7 +58,7 @@ const PressReleaseSection: React.FC<PressReleaseSectionI> = ({
             <div className='text-center'>
                 <Heading1
                     text={title}
-                    color={ColorE.NAVY}
+                    color={ColorE.SECONDARY}
                     fontWeight={FontWeightE.NORMAL}
                 />
             </div>
@@ -79,7 +79,7 @@ const PressReleaseSection: React.FC<PressReleaseSectionI> = ({
             <div className='max-fit-content mx-auto mt-16'>
                 <ButtonLink
                     linkText='See all News & Press Releases'
-                    buttonColor={ColorE.BLUE}
+                    buttonColor={ColorE.PRIMARY}
                     link='/'
                     fontWeight={FontWeightE.BOLD}
                 />

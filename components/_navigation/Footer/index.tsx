@@ -26,20 +26,20 @@ const Footer = () => {
     } = navContent?.data?.fields as FooterDataI
 
     return (
-        <footer className='bg-lightGrey mt-12 pt-20'>
+        <footer className='bg-shades-silver mt-12 pt-20'>
             <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-32 gap-10 place-content-evenly'>
                 <section className='max-w-64'>
                     <Link
                         href='/'
-                        className='text-blue hover:text-navy text-xl font-medium'
+                        className='text-primary hover:text-secondary text-xl font-medium'
                         title={medical_center_name}
                     >
                         {medical_center_name}
                     </Link>
-                    <div className='space-y-1 text-black'>
+                    <div className='space-y-1 text-foreground'>
                         {address}
                     </div>
-                    <div className='font-bold text-sm text-black'>
+                    <div className='font-bold text-sm text-foreground'>
                         {phone}
                     </div>
                     {social_links &&
@@ -60,7 +60,7 @@ const Footer = () => {
                             text={`Copyright ©${new Date().getFullYear()}. All rights reserved.`}
                             fontSize={FontSizeE.SM}
                             fontWeight={FontWeightE.NORMAL}
-                            color={ColorE.BLACK}
+                            color={ColorE.FOREGROUND}
                         />
                     </div>
                 </section>

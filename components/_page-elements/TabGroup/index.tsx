@@ -19,14 +19,14 @@ const TabButton: React.FC<TabButtonI> = ({
         <button
             onClick={() => onClick(index)}
             className={cx('text-lg flex gap-2 items-center py-2 pl-4 pr-9 lg:w-80', {
-                ['bg-navy text-white']: isActive,
-                ['hover:bg-blue hover:text-white text-darkGrey']: !isActive,
+                ['bg-secondary text-background']: isActive,
+                ['hover:bg-primary hover:text-background text-shades-darkGrey']: !isActive,
             })}
         >
             <span
                 className={cx({
-                    ['text-white']: isActive,
-                    ['hover:text-white text-darkGrey']: !isActive,
+                    ['text-background']: isActive,
+                    ['hover:text-background text-shades-darkGrey']: !isActive,
                 })}
             >
                 <FaChevronRight />
@@ -43,7 +43,7 @@ const TabButtonContainer: React.FC<TabButtonContainerI> = ({
 }) => {
     return (
         <div
-            className='bg-[#F6F6F6] ml-5'
+            className='bg-background ml-5'
         >
             {tabs?.map((tab: TabI, index: number) => {
                 return (
@@ -66,11 +66,11 @@ const TabGroup: React.FC<TabGroupSectionI> = ({
 }) => {
     const [ activeIdx, setActive ] = useState(0)
     return (
-        <section className='border-b-2 border-grey mx-5'>
-            <div className='text-center border-y-2 border-grey py-8 mt-16 '>
+        <section className='border-b-2 border-shades-silver mx-5'>
+            <div className='text-center border-y-2 border-shades-silver py-8 mt-16 '>
                 <Heading1
                     text={headline}
-                    color={ColorE.NAVY}
+                    color={ColorE.SECONDARY}
                     fontWeight={FontWeightE.NORMAL}
                 />
             </div>
@@ -83,7 +83,7 @@ const TabGroup: React.FC<TabGroupSectionI> = ({
                         <div className='pb-3'>
                             <TextContent
                                 text={tabs[activeIdx].title}
-                                color={ColorE.NAVY}
+                                color={ColorE.SECONDARY}
                                 fontWeight={FontWeightE.MEDIUM}
                                 fontSize={FontSizeE.XL}
                             />

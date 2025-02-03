@@ -1,11 +1,11 @@
 export enum ColorE {
-    NAVY = 'NAVY',
-    WHITE = 'WHITE',
-    GREY = 'GREY',
+    BACKGROUND = 'BACKGROUND',
+    FOREGROUND = 'FOREGROUND',
+    PRIMARY = 'PRIMARY',
+    SECONDARY = 'SECONDARY',
+    ACCENT_1 = 'ACCENT_1',
     DARKGREY = 'DARKGREY',
-    BLUE = 'BLUE',
-    LIGHTBLUE = 'LIGHTBLUE',
-    BLACK = 'BLACK'
+    SILVER = 'SILVER'
 }
 
 export enum FontWeightE {

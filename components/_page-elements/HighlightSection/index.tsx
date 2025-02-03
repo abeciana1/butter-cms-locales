@@ -25,7 +25,7 @@ export const Highlight: React.FC<HighlightI> = ({
             />
             <Link
                 href={link || '/'}
-                className='text-xl text-navy hover:text-blue'
+                className='text-xl text-secondary hover:text-primary'
             >
                 {title}
             </Link>
@@ -35,7 +35,7 @@ export const Highlight: React.FC<HighlightI> = ({
             <Link
                 href={link || '/'}
                 title={`Learn more - ${title}`}
-                className='text-lg mt-5 font-bold text-blue hover:text-navy'
+                className='text-lg mt-5 font-bold text-primary hover:text-secondary'
             >
                 {link_label}
             </Link>
@@ -80,11 +80,11 @@ const HighlightSection: React.FC<HighlightSectionI> = ({
     };
     
     return (
-        <section className='mt-10 border-b-2 border-grey pb-16 mx-5'>
+        <section className='mt-10 border-b-2 border-shades-silver pb-16 mx-5'>
             <div className='text-center'>
                 <Heading1
                     text={title}
-                    color={ColorE.NAVY}
+                    color={ColorE.PRIMARY}
                     fontWeight={FontWeightE.NORMAL}
                 />
             </div>

@@ -17,14 +17,16 @@ export default {
     },
     extend: {
       colors: {
-        navy: '#11405E',
-        white: '#FFFFFF',
-        grey: '#D7D7D7',
-        darkGrey: '#707070',
-        lightGrey: '#EBEBEB',
-        blue: {
-          light: '#EEF9FB',
-          DEFAULT: '#52A3B7',
+        background: '#F8F9FA',
+        foreground: '#333333',
+        primary: '#0077B6',
+        secondary: '#061A40',
+        accent: {
+          1: '#FFC857'
+        },
+        shades: {
+          silver: '#ADADAD',
+          darkGrey: '#525252'
         }
       },
     },
