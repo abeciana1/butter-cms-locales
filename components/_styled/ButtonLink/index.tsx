@@ -18,6 +18,7 @@ const ButtonLink: React.FC<ButtonLinkI> = ({
                 ['bg-shades-silver text-secondary']: buttonColor === ColorE.SILVER,
                 ['bg-shades-darkGrey text-background']: buttonColor === ColorE.DARKGREY,
                 ['bg-primary text-background']: buttonColor === ColorE.PRIMARY,
+                ['bg-accent-1 text-foreground']: buttonColor === ColorE.ACCENT_1,
                 ['font-light']: fontWeight === FontWeightE.LIGHT,
                 ['font-medium']: fontWeight === FontWeightE.MEDIUM,
                 ['font-normal']: fontWeight === FontWeightE.NORMAL,
