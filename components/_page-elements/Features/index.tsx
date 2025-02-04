@@ -13,10 +13,13 @@ const Features: React.FC<FeaturesSectionI> = ({
                 return (
                     <Feature
                         key={feature?.title + index}
-                        image={feature?.image}
+                        default_image={feature?.default_image}
+                        hover_image={feature?.hover_image}
                         about={feature?.about}
                         link={feature?.link}
                         title={feature?.title}
+                        default_color={feature?.default_color}
+                        hover_color={feature?.hover_color}
                     />
                 )
             })}
