@@ -10,7 +10,7 @@ import Typeform from '@/components/_styled/Typeform'
 import { useRef } from 'react'
 import { GenericEmbed } from '@typeform/embed-react';
 
-const NavigationLinkButton: React.FC<NavigationLinkButtonI> = ({
+const NavigationLinkTypeformButton: React.FC<NavigationLinkButtonI> = ({
     label,
     form,
     formEmbed
@@ -22,7 +22,9 @@ const NavigationLinkButton: React.FC<NavigationLinkButtonI> = ({
     }
     return (
         <>
-            <Typeform id={form?.id} embed={formEmbed} embedRef={embedRef} />
+            <div className='absolute'>
+                <Typeform id={form?.id} embed={formEmbed} embedRef={embedRef} />
+            </div>
             <button onClick={typeformOpenHandler}>
                 <TextContent
                     text={label}
