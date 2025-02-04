@@ -157,3 +157,21 @@ export interface HoverLinkI {
     link_text: string;
     border?: boolean
 }
+
+export interface TestimonialDataI {
+    meta?: {
+        id: string;
+    };
+    name: string;
+    quote: string;
+    job_role: string;
+    company_name: string;
+    company_size: string;
+    headshot: string;
+    industry: string;
+}
+
+export interface TestimonialSectionI {
+    heading: string;
+    reviews: TestimonialDataI[];
+}
