@@ -4,6 +4,7 @@ import Feature from '@/components/_styled/Feature'
 const Features: React.FC<FeaturesSectionI> = ({
     feature
 }) => {
+    console.log('feature', feature)
     return (
         <section
             className='grid grid-cols-3 gap-16 mt-10 px-10'
