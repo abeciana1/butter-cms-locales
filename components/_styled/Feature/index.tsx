@@ -32,7 +32,10 @@ const Feature: React.FC<FeatureI> = ({
                     alt={default_image?.alt || 'feature'}
                     width={50}
                     height={50}
-                    className={`p-1 rounded-full h-14 w-14 bg-[${hover_color}]`}
+                    style={{
+                        backgroundColor: hover_color
+                    }}
+                    className={`p-1 rounded-full h-14 w-14`}
                 />
                 :
                 <Image
@@ -40,17 +43,20 @@ const Feature: React.FC<FeatureI> = ({
                     alt={hover_image?.alt || 'feature'}
                     width={50}
                     height={50}
-                    className={`p-1 rounded-full h-14 w-14 bg-[${default_color}]`}
+                    style={{
+                        backgroundColor: default_color
+                    }}
+                    className={`p-1 rounded-full h-14 w-14`}
                 />
                 }
             </Link>
             <div>
                 <Link
                     href={link || '/'}
-                    className={cx('text-xl',{
-                        [`text-[${default_color}]`]: !hover,
-                        [`text-[${hover_color}]`]: hover
-                    })}
+                    style={{
+                        color: hover ? hover_color : default_color
+                    }}
+                    className='text-xl'
                 >
                     {title}
                 </Link>
