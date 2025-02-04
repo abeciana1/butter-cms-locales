@@ -21,10 +21,13 @@ export interface SliderHeroI {
 }
 
 export interface FeatureI {
-    image: ButterImage;
+    default_image: ButterImage;
+    hover_image: ButterImage;
     about: string;
     title: string;
     link: string;
+    default_color: string;
+    hover_color: string;
 }
 
 export interface FeaturesSectionI {
