@@ -37,4 +37,4 @@ const NavigationLinkTypeformButton: React.FC<NavigationLinkButtonI> = ({
     )
 }
 
-export default NavigationLinkButton
+export default NavigationLinkTypeformButton
