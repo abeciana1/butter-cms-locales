@@ -1,8 +1,8 @@
-//* form integrations here
+import { RefObject } from 'react';
+import { GenericEmbed } from '@typeform/embed-react';
 
 export interface TypeformI {
     id: string;
-    title: string;
-    type: string;
-    url: string;
+    embed: string;
+    embedRef?: RefObject<GenericEmbed | undefined>;
 }
