@@ -6,10 +6,13 @@ import { useState } from 'react'
 import cx from 'classnames'
 
 const Feature: React.FC<FeatureI> = ({
-    image,
+    default_image,
     about,
     title,
-    link
+    link,
+    hover_color,
+    hover_image,
+    default_color
 }) => {
     const [ hover, setHover ] = useState(false)
     return (
@@ -20,26 +23,33 @@ const Feature: React.FC<FeatureI> = ({
         >
             <Link
                 href={link || '/'}
-                title={title + ' - ' + image?.alt}
+                title={title}
                 className='flex justify-center items-center'
             >
+                {hover ?
                 <Image
-                    src={image?.url}
-                    alt={image?.alt || 'feature'}
+                    src={default_image?.url}
+                    alt={default_image?.alt || 'feature'}
                     width={50}
                     height={50}
-                    className={cx('p-1 rounded-full h-14 w-14',{
-                        ['bg-primary']: !hover,
-                        ['bg-secondary']: hover
-                    })}
+                    className={`p-1 rounded-full h-14 w-14 bg-[${hover_color}]`}
                 />
+                :
+                <Image
+                    src={hover_image?.url}
+                    alt={hover_image?.alt || 'feature'}
+                    width={50}
+                    height={50}
+                    className={`p-1 rounded-full h-14 w-14 bg-[${default_color}]`}
+                />
+                }
             </Link>
             <div>
                 <Link
                     href={link || '/'}
                     className={cx('text-xl',{
-                        ['text-secondary']: !hover,
-                        ['text-prmary']: hover
+                        [`text-[${default_color}]`]: !hover,
+                        [`text-[${hover_color}]`]: hover
                     })}
                 >
                     {title}
