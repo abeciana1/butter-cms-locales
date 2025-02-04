@@ -1,7 +1,6 @@
 'use client'
-import { useEffect } from 'react'
 import { TypeformI } from '@/definitions/interfaces/_forms'
-import { PopupButton, Sidetab, SliderButton, Widget } from '@typeform/embed-react'
+import { PopupButton, Sidetab, SliderButton } from '@typeform/embed-react'
 
 
 const Typeform: React.FC<TypeformI> = ({
@@ -9,12 +8,6 @@ const Typeform: React.FC<TypeformI> = ({
     embed,
     embedRef,
 }) => {
-
-    useEffect(() => {
-        if (embedRef && embedRef.current) {
-            console.log("Typeform Embed Ref Initialized:", embedRef.current);
-        }
-    }, []);
 
     return (
         <>
