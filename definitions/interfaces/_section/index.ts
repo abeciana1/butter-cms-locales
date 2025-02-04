@@ -173,5 +173,7 @@ export interface TestimonialDataI {
 
 export interface TestimonialSectionI {
     heading: string;
+    headingFontWeight: ButterFontWeight;
+    headingFontColor: ButterColor;
     reviews: TestimonialDataI[];
 }
