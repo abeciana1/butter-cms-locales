@@ -1,3 +1,5 @@
+import { TypeformI } from '@/definitions/interfaces/_forms'
+
 export interface NavigationLinkFieldI {
     label: string;
     url: string;
@@ -40,4 +42,9 @@ export interface NavBarI {
 export interface SubNavigationLinksI {
     phoneNumber: string;
     navigationLinks: SubsectionLinkI[];
+}
+
+export interface NavigationLinkButtonI {
+    label: string;
+    form: TypeformI;
 }
