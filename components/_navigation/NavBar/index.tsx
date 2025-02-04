@@ -31,15 +31,13 @@ const NavBar = () => {
                     className='flex gap-7 items-center'
                 >
                     {fields?.links?.map(({type, fields: sectionData}: NavigationLinkI, index: number) => {
-                        if (type === 'navigation_link') {
-                            return (
-                                <ComponentRenderer
-                                    key={type + index}
-                                    type={type}
-                                    sectionData={sectionData}
-                                />
-                            )
-                        }
+                        return (
+                            <ComponentRenderer
+                                key={type + index}
+                                type={type}
+                                sectionData={sectionData}
+                            />
+                        )
                     })}
                 </ul>
             </nav>
