@@ -1,4 +1,3 @@
-'use client'
 import { TypeformI } from '@/definitions/interfaces/_forms'
 import { PopupButton, Sidetab, SliderButton } from '@typeform/embed-react'
 
