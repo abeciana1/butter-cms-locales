@@ -15,7 +15,6 @@ const NavigationLinkButton: React.FC<NavigationLinkButtonI> = ({
     form,
     formEmbed
 }) => {
-    // const buttonRef = useRef<HTMLButtonElement | null>(null)
     const embedRef = useRef<GenericEmbed>(undefined)
 
     const typeformOpenHandler = () => {
