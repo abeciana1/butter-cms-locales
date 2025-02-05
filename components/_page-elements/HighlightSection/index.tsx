@@ -80,7 +80,7 @@ const HighlightSection: React.FC<HighlightSectionI> = ({
     };
     
     return (
-        <section className='mt-10 border-b-2 border-shades-silver pb-16 mx-5'>
+        <section className='mt-32 mx-5'>
             <div className='text-center'>
                 <Heading1
                     text={title}
