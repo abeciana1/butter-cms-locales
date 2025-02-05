@@ -8,9 +8,8 @@ const TestimonialSection: React.FC<TestimonialSectionI> = ({
     headingFontWeight,
     headingFontColor
 }) => {
-    console.log('headingFontWeight', headingFontWeight)
     return (
-        <section className='mt-10 pb-16 mx-5 border-b-2 border-shades-silver'>
+        <section className='mt-32 pb-16 mx-5'>
             <div className='text-center'>
                 <Heading1
                     text={heading}
@@ -19,7 +18,7 @@ const TestimonialSection: React.FC<TestimonialSectionI> = ({
                 />
             </div>
             {(reviews && reviews?.length > 0) &&
-                <div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-fit mx-auto gap-8 mt-10'>
                     {reviews?.map((review: TestimonialDataI) => {
                         return (
                             <TestimonialCard
