@@ -12,7 +12,7 @@ const ButtonLink: React.FC<ButtonLinkI> = ({
     return (
         <Link
             href={link || '/'}
-            className={cx('text-xl py-1 px-3', {
+            className={cx('text-xl py-1.5 px-3.5 rounded-md', {
                 ['bg-secondary text-background']: buttonColor === ColorE.SECONDARY,
                 ['bg-background text-secondary']: buttonColor === ColorE.BACKGROUND,
                 ['bg-shades-silver text-secondary']: buttonColor === ColorE.SILVER,
