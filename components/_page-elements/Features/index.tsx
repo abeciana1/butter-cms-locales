@@ -6,7 +6,7 @@ const Features: React.FC<FeaturesSectionI> = ({
 }) => {
     return (
         <section
-            className='grid grid-cols-3 gap-16 mt-10 px-10'
+            className='grid grid-cols-3 gap-16 mt-32 px-10'
         >
             {feature?.map((feature: FeatureI, index: number) => {
                 return (
