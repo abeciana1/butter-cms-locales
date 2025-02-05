@@ -6,10 +6,13 @@ import { useState } from 'react'
 import cx from 'classnames'
 
 const Feature: React.FC<FeatureI> = ({
-    image,
+    default_image,
     about,
     title,
-    link
+    link,
+    hover_color,
+    hover_image,
+    default_color
 }) => {
     const [ hover, setHover ] = useState(false)
     return (
@@ -20,30 +23,44 @@ const Feature: React.FC<FeatureI> = ({
         >
             <Link
                 href={link || '/'}
-                title={title + ' - ' + image?.alt}
+                title={title}
+                className='flex justify-center items-center'
             >
+                {hover ?
                 <Image
-                    src={image?.url}
-                    alt={image?.alt}
-                    width={80}
-                    height={80}
-                    className={cx({
-                        ['bg-blue']: !hover,
-                        ['bg-navy']: hover
-                    })}
+                    src={default_image?.url}
+                    alt={default_image?.alt || 'feature'}
+                    width={50}
+                    height={50}
+                    style={{
+                        backgroundColor: hover_color
+                    }}
+                    className={`p-1 rounded-full h-14 w-14`}
                 />
+                :
+                <Image
+                    src={hover_image?.url}
+                    alt={hover_image?.alt || 'feature'}
+                    width={50}
+                    height={50}
+                    style={{
+                        backgroundColor: default_color
+                    }}
+                    className={`p-1 rounded-full h-14 w-14`}
+                />
+                }
             </Link>
             <div>
                 <Link
                     href={link || '/'}
-                    className={cx('text-xl',{
-                        ['text-navy']: !hover,
-                        ['text-blue']: hover
-                    })}
+                    style={{
+                        color: hover ? hover_color : default_color
+                    }}
+                    className='text-xl'
                 >
                     {title}
                 </Link>
-                <div className='text-darkGrey font-medium max-w-48'>
+                <div className='text-shades-darkGrey font-medium max-w-48'>
                     {about}
                 </div>
             </div>

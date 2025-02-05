@@ -14,8 +14,8 @@ const NavBar = () => {
         fields
     } = navContent?.data as NavBarI
     return (
-        <div className='sticky top-0 z-50 bg-white'>
-            <nav className='flex relative justify-between items-center py-2 px-5'>
+        <div className='sticky top-0 z-50 bg-background'>
+            <nav className='flex relative justify-between items-center py-5 px-5 shadow-md'>
                 <Link
                     href='/'
                     title='Homepage link'
@@ -31,15 +31,13 @@ const NavBar = () => {
                     className='flex gap-7 items-center'
                 >
                     {fields?.links?.map(({type, fields: sectionData}: NavigationLinkI, index: number) => {
-                        if (type === 'navigation_link') {
-                            return (
-                                <ComponentRenderer
-                                    key={type + index}
-                                    type={type}
-                                    sectionData={sectionData}
-                                />
-                            )
-                        }
+                        return (
+                            <ComponentRenderer
+                                key={type + index}
+                                type={type}
+                                sectionData={sectionData}
+                            />
+                        )
                     })}
                 </ul>
             </nav>

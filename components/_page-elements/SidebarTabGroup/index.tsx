@@ -74,19 +74,19 @@ const InformationTab: React.FC<SidebarInformationTabI> = ({
                     alt={icon?.alt}
                     width={43}
                     height={43}
-                    className='bg-navy'
+                    className='bg-secondary'
                 />
             </div>
             <div>
                 <TextContent
                     text={title}
-                    color={ColorE.NAVY}
+                    color={ColorE.SECONDARY}
                     fontWeight={FontWeightE.BOLD}
                     fontSize={FontSizeE.LG}
                 />
                 <Link
                     href={link}
-                    className='text-blue hover:underline font-medium text-md'
+                    className='text-primary hover:underline font-medium text-md'
                 >
                     {link_text}
                 </Link>
@@ -106,7 +106,7 @@ const SidebarTabButton: React.FC<SidebarButtonI> = ({
             onClick={() => onClick(index)}
             disabled={activeIdx === index}
             className={cx('py-2 w-[140px]',{
-                ['border-b-2 border-grey']: activeIdx !== index
+                ['border-b-2 border-shades-silver']: activeIdx !== index
             })}
         >
             <Image
@@ -115,8 +115,8 @@ const SidebarTabButton: React.FC<SidebarButtonI> = ({
                 width={26}
                 height={26}
                 className={cx('relative mx-auto',{
-                    ['bg-navy']: activeIdx === index,
-                    ['bg-blue']: activeIdx !== index
+                    ['bg-secondary']: activeIdx === index,
+                    ['bg-primary']: activeIdx !== index
                 })}
             />
         </button>
@@ -129,11 +129,11 @@ const SidebarTabGroup: React.FC<SidebarTabGroupI> = ({
     const [ activeIdx, setActive ] = useState(0)
     return (
         <div
-            className='border-2 border-grey mb-12 w-[280px]'
+            className='border-2 border-shades-silver mb-12 w-[280px]'
         >
             {(tabs && tabs?.length > 0) &&
                 <div
-                    className='flex items-center divide-x-2 divide-grey'
+                    className='flex items-center divide-x-2 divide-shades-silver'
                 >
                     {tabs?.map((tab: SidebarTabI, index: number) => {
                         return (

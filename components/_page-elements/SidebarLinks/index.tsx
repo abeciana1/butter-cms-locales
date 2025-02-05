@@ -9,7 +9,7 @@ const SidebarLink: React.FC<SidebarLinkI> = ({
         <li>
             <Link
                 href={link}
-                className='text-navy hover:text-blue font-medium'
+                className='text-secondary hover:text-primary font-medium'
             >
                 {link_text}
             </Link>
@@ -23,7 +23,7 @@ const SidebarLinks: React.FC<SidebarLinksI> = ({
 }) => {
     return (
         <div className='mb-12'>
-            <h2 className='text-lg text-blue font-medium'>
+            <h2 className='text-lg text-primary font-medium'>
                 {header}
             </h2>
             {(links && links?.length > 0) &&

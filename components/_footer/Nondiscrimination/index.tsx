@@ -10,7 +10,7 @@ const Nondiscrimination: React.FC<NondiscriminationI> = ({
     text
 }) => {
     return (
-        <section className="py-8 mt-10 border-t-[1px] border-grey">
+        <section className="py-8 mt-10 border-t-[1px] border-shades-darkGrey">
             <div className="px-32">
                 <TextContent
                     text='Notice of Nondiscrimination'

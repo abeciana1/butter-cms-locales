@@ -14,12 +14,11 @@ const SiteLink: React.FC<LinkI> = ({
         <Link
             href={href || '/'}
             className={cx('', {
-                ['text-navy']: color === ColorE.NAVY,
-                ['text-white']: color === ColorE.WHITE,
-                ['text-grey']: color === ColorE.GREY,
-                ['text-darkGrey']: color === ColorE.DARKGREY,
-                ['text-blue']: color === ColorE.BLUE,
-                ['text-blue-light']: color === ColorE.LIGHTBLUE,
+                ['text-secondary']: color === ColorE.SECONDARY,
+                ['text-background']: color === ColorE.BACKGROUND,
+                ['text-shades-silver']: color === ColorE.SILVER,
+                ['text-shades-darkGrey']: color === ColorE.DARKGREY,
+                ['text-primary']: color === ColorE.PRIMARY,
                 ['font-light']: fontWeight === FontWeightE.LIGHT,
                 ['font-medium']: fontWeight === FontWeightE.MEDIUM,
                 ['font-normal']: fontWeight === FontWeightE.NORMAL,

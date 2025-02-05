@@ -11,12 +11,12 @@ const FooterNavigationSubLinks: React.FC<SubsectionLinkI> = ({
         <li
             className='flex items-center gap-1'
         >
-            <div className='text-blue'>
+            <div className='text-primary'>
                 <FaChevronRight size={14} strokeWidth={11} />
             </div>
             <Link
                 href={url}
-                className='text-black text-sm'
+                className='text-foreground text-sm'
             >
                 {label}
             </Link>
@@ -36,7 +36,7 @@ const FooterNavigationLink: React.FC<FooterNavigationLinkI> = ({
         <section>
             <Link
                 href={url || '/'}
-                className='text-blue hover:text-navy font-medium text-xl'
+                className='text-primary hover:text-secondary font-medium text-xl'
             >
                 {label}
             </Link>

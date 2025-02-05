@@ -21,10 +21,13 @@ export interface SliderHeroI {
 }
 
 export interface FeatureI {
-    image: ButterImage;
+    default_image: ButterImage;
+    hover_image: ButterImage;
     about: string;
     title: string;
     link: string;
+    default_color: string;
+    hover_color: string;
 }
 
 export interface FeaturesSectionI {
@@ -153,4 +156,24 @@ export interface HoverLinkI {
     link: string;
     link_text: string;
     border?: boolean
+}
+
+export interface TestimonialDataI {
+    meta?: {
+        id: string;
+    };
+    name: string;
+    quote: string;
+    job_role: string;
+    company_name: string;
+    company_size: string;
+    headshot: string;
+    industry: string;
+}
+
+export interface TestimonialSectionI {
+    heading: string;
+    headingFontWeight: ButterFontWeight;
+    headingFontColor: ButterColor;
+    reviews: TestimonialDataI[];
 }

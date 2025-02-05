@@ -6,16 +6,19 @@ const Features: React.FC<FeaturesSectionI> = ({
 }) => {
     return (
         <section
-            className='grid grid-cols-3 gap-16 mt-10 px-10'
+            className='grid grid-cols-3 gap-16 mt-32 px-10'
         >
             {feature?.map((feature: FeatureI, index: number) => {
                 return (
                     <Feature
                         key={feature?.title + index}
-                        image={feature?.image}
+                        default_image={feature?.default_image}
+                        hover_image={feature?.hover_image}
                         about={feature?.about}
                         link={feature?.link}
                         title={feature?.title}
+                        default_color={feature?.default_color}
+                        hover_color={feature?.hover_color}
                     />
                 )
             })}

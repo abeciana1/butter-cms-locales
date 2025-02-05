@@ -14,30 +14,29 @@ const Teaser: React.FC<TeaserI> = ({
     background_color,
     link
 }) => {
-    const renderWhiteTextColor = background_color?.color === ColorE.NAVY || background_color?.color === ColorE.DARKGREY || background_color?.color === ColorE.BLUE
+    const renderWhiteTextColor = background_color?.color === ColorE.SECONDARY || background_color?.color === ColorE.DARKGREY || background_color?.color === ColorE.PRIMARY
     return (
         <div
             className={cx('flex justify-between gap-5 px-10 py-16 max-h-[280px] h-[280px]',{
-                ['bg-navy']: background_color?.color === ColorE.NAVY,
-                ['bg-white']: background_color?.color === ColorE.WHITE,
-                ['bg-grey']: background_color?.color === ColorE.GREY,
-                ['bg-darkGrey']: background_color?.color === ColorE.DARKGREY,
-                ['bg-blue']: background_color?.color === ColorE.BLUE,
-                ['bg-blue-light']: background_color?.color === ColorE.LIGHTBLUE,
+                ['bg-secondary']: background_color?.color === ColorE.SECONDARY,
+                ['bg-background']: background_color?.color === ColorE.BACKGROUND,
+                ['bg-shades-silver']: background_color?.color === ColorE.SILVER,
+                ['bg-shades-darkGrey']: background_color?.color === ColorE.DARKGREY,
+                ['bg-primary']: background_color?.color === ColorE.PRIMARY,
             })}
         >
             <div className='flex flex-col justify-between'>
                 <div className=''>
                     <TextContent
                         text={title}
-                        color={renderWhiteTextColor ? ColorE.WHITE : ColorE.DARKGREY}
+                        color={renderWhiteTextColor ? ColorE.BACKGROUND : ColorE.DARKGREY}
                         fontWeight={FontWeightE.BOLD}
                         fontSize={FontSizeE.LG}
                     />
                     <div className='mt-5'>
                         <TextContent
                             text={body}
-                            color={renderWhiteTextColor ? ColorE.WHITE : ColorE.DARKGREY}
+                            color={renderWhiteTextColor ? ColorE.BACKGROUND : ColorE.DARKGREY}
                             fontWeight={FontWeightE.MEDIUM}
                             fontSize={FontSizeE.LG}
                         />
@@ -47,8 +46,8 @@ const Teaser: React.FC<TeaserI> = ({
                     href={link || '/'}
                     title={`Learn more — ${title}`}
                     className={cx('text-md font-medium',{
-                        ['text-white']: renderWhiteTextColor,
-                        ['text-darkGrey']: !renderWhiteTextColor
+                        ['text-background']: renderWhiteTextColor,
+                        ['text-shades-darkGrey']: !renderWhiteTextColor
                     })}
                 >
                     {cta}
@@ -70,11 +69,11 @@ const TeaserSection: React.FC<TeaserSectionI> = ({
     teasers
 }) => {
     return (
-        <section className='mt-10 border-b-2 border-grey pb-20 mx-5'> 
+        <section className='mt-10 border-b-2 border-shades-silver pb-20 mx-5'> 
             <div className='text-center'>
                 <Heading1
                     text={title}
-                    color={ColorE.NAVY}
+                    color={ColorE.SECONDARY}
                     fontWeight={FontWeightE.NORMAL}
                 />
             </div>

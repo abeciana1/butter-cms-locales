@@ -12,13 +12,13 @@ const ButtonLink: React.FC<ButtonLinkI> = ({
     return (
         <Link
             href={link || '/'}
-            className={cx('text-xl py-1 px-3', {
-                ['bg-navy text-white']: buttonColor === ColorE.NAVY,
-                ['bg-white text-navy']: buttonColor === ColorE.WHITE,
-                ['bg-grey text-navy']: buttonColor === ColorE.GREY,
-                ['bg-darkGrey text-white']: buttonColor === ColorE.DARKGREY,
-                ['bg-blue text-white']: buttonColor === ColorE.BLUE,
-                ['bg-blue-light text-navy']: buttonColor === ColorE.LIGHTBLUE,
+            className={cx('text-xl py-1.5 px-3.5 rounded-md', {
+                ['bg-secondary text-background']: buttonColor === ColorE.SECONDARY,
+                ['bg-background text-secondary']: buttonColor === ColorE.BACKGROUND,
+                ['bg-shades-silver text-secondary']: buttonColor === ColorE.SILVER,
+                ['bg-shades-darkGrey text-background']: buttonColor === ColorE.DARKGREY,
+                ['bg-primary text-background']: buttonColor === ColorE.PRIMARY,
+                ['bg-accent-1 text-foreground']: buttonColor === ColorE.ACCENT_1,
                 ['font-light']: fontWeight === FontWeightE.LIGHT,
                 ['font-medium']: fontWeight === FontWeightE.MEDIUM,
                 ['font-normal']: fontWeight === FontWeightE.NORMAL,
