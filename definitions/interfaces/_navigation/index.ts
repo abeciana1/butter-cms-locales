@@ -47,5 +47,5 @@ export interface SubNavigationLinksI {
 export interface NavigationLinkButtonI {
     label: string;
     form: TypeformI;
-    formEmbed: string;
+    formEmbed: 'popup' | 'side-tab' | 'slider';
 }
