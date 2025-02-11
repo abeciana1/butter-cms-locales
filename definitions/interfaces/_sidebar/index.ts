@@ -11,24 +11,6 @@ export interface SidebarLinksI {
     links: SidebarLinkI[];
 }
 
-export interface SidebarTabI {
-    sidebar_icon: ButterImage;
-    reference_collection: boolean;
-    reference_dropdown: string;
-    limit_on_reference_result: number;
-    information_tab: boolean;
-    icon: ButterImage;
-    title: string;
-    link: string;
-    link_text: string;
-    wysiwyg_content: boolean;
-    text_content: string;
-}
-
-export interface SidebarTabGroupI {
-    tabs: SidebarTabI[];
-}
-
 export interface SidebarInformationTabI {
     icon: ButterImage;
     title: string;
