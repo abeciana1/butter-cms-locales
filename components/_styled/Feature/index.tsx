@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FeatureI } from '@/definitions/interfaces/_section'
 import { useState } from 'react'
-import cx from 'classnames'
 
 const Feature: React.FC<FeatureI> = ({
     default_image,

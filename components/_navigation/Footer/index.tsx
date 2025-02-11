@@ -3,7 +3,6 @@ import { getNavMenu } from '@/lib/butter'
 import { headers } from 'next/headers';
 import Link from 'next/link'
 import PolicyLinkSection from '@/components/_footer/PolicyLinks'
-// import Nondiscrimination from '@/components/_footer/Nondiscrimination'
 import TextContent from '@/components/_styled/TextContent';
 import { ColorE, FontSizeE, FontWeightE } from '@/definitions/enums';
 import { FooterDataI, LinkFieldsI } from '@/definitions/interfaces/_footer'
@@ -22,7 +21,6 @@ const Footer = () => {
         social_links,
         policy_links,
         links,
-        nondiscrimination_notice
     } = navContent?.data?.fields as FooterDataI
 
     return (
@@ -70,7 +68,6 @@ const Footer = () => {
                     )
                 })}
             </section>
-            {/* <Nondiscrimination text={nondiscrimination_notice} /> */}
         </footer>
     )
 }
