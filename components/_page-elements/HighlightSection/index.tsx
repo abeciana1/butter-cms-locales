@@ -15,31 +15,31 @@ export const Highlight: React.FC<HighlightI> = ({
     link_label
 }) => {
     return (
-        <>
+        <div className='flex flex-col'>
             <Image
                 src={image}
                 alt={title}
                 width={280}
                 height={145}
-                className='pb-5'
+                className='pb-5 w-full max-h-44 rounded-md'
             />
             <Link
                 href={link || '/'}
-                className='text-xl text-secondary hover:text-primary'
+                className='flex-none text-xl text-secondary hover:text-primary'
             >
                 {title}
             </Link>
-            <div className='my-5'>
+            <div className='my-5 grow'>
                 {excerpt}
             </div>
             <Link
                 href={link || '/'}
                 title={`Learn more - ${title}`}
-                className='text-lg mt-5 font-bold text-primary hover:text-secondary'
+                className='text-lg mt-5 font-bold text-primary hover:text-secondary flex-none'
             >
                 {link_label}
             </Link>
-        </>
+        </div>
     )
 }
 
@@ -52,7 +52,7 @@ const HighlightSection: React.FC<HighlightSectionI> = ({
     useEffect(() => {
         const updateItemsPerSlide = () => {
             if (window.innerWidth >= 1024) {
-            setItemsPerSlide(4);
+            setItemsPerSlide(3);
             } else if (window.innerWidth >= 640) {
             setItemsPerSlide(2);
             } else {
@@ -93,12 +93,12 @@ const HighlightSection: React.FC<HighlightSectionI> = ({
                 {getSlides(highlights, itemsPerSlide).map((slide, slideIndex) => (
                     <div
                         key={slideIndex}
-                        className={`grid gap-4 p-4 grid-cols-${itemsPerSlide} max-w-fit mx-auto`}
+                        className={`grid gap-10 p-4 grid-cols-${itemsPerSlide} max-w-fit mx-auto`}
                     >
                         {slide.map((highlight) => (
                             <div
                                 key={highlight?.meta?.id}
-                                className='max-w-60'
+                                className='max-w-72'
                             >
                                 <Highlight
                                     title={highlight?.title}

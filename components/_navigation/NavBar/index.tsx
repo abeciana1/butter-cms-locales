@@ -15,7 +15,7 @@ const NavBar = () => {
     } = navContent?.data as NavBarI
     return (
         <div className='sticky top-0 z-50 bg-background'>
-            <nav className='flex relative justify-between items-center py-5 px-5 shadow-md'>
+            <nav className='flex relative justify-between items-center py-5 px-5'>
                 <Link
                     href='/'
                     title='Homepage link'

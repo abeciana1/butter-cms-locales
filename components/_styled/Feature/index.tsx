@@ -19,38 +19,37 @@ const Feature: React.FC<FeatureI> = ({
         <div
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className='flex gap-5 w-80'
         >
             <Link
                 href={link || '/'}
                 title={title}
-                className='flex justify-center items-center'
+                className='flex justify-center items-center rounded-full max-w-fit relative mx-auto'
+                style={{
+                    backgroundColor: default_color
+                }}
             >
                 {hover ?
-                <Image
-                    src={default_image?.url}
-                    alt={default_image?.alt || 'feature'}
-                    width={50}
-                    height={50}
-                    style={{
-                        backgroundColor: hover_color
-                    }}
-                    className={`p-1 rounded-full h-14 w-14`}
-                />
-                :
-                <Image
-                    src={hover_image?.url}
-                    alt={hover_image?.alt || 'feature'}
-                    width={50}
-                    height={50}
-                    style={{
-                        backgroundColor: default_color
-                    }}
-                    className={`p-1 rounded-full h-14 w-14`}
-                />
+                    <Image
+                        src={default_image?.url}
+                        alt={default_image?.alt || 'feature'}
+                        width={50}
+                        height={50}
+                        style={{
+                            backgroundColor: hover_color
+                        }}
+                        className={`p-1.5`}
+                    />
+                    :
+                    <Image
+                        src={hover_image?.url}
+                        alt={hover_image?.alt || 'feature'}
+                        width={48}
+                        height={48}
+                        className={`p-1.5`}
+                    />
                 }
             </Link>
-            <div>
+            <div className='text-center mt-5'>
                 <Link
                     href={link || '/'}
                     style={{
@@ -60,7 +59,7 @@ const Feature: React.FC<FeatureI> = ({
                 >
                     {title}
                 </Link>
-                <div className='text-shades-darkGrey font-medium max-w-48'>
+                <div className='text-shades-darkGrey font-medium '>
                     {about}
                 </div>
             </div>

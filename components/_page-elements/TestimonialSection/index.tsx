@@ -18,7 +18,7 @@ const TestimonialSection: React.FC<TestimonialSectionI> = ({
                 />
             </div>
             {(reviews && reviews?.length > 0) &&
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-fit mx-auto gap-8 mt-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-fit mx-auto gap-10 mt-10'>
                     {reviews?.map((review: TestimonialDataI) => {
                         return (
                             <TestimonialCard
