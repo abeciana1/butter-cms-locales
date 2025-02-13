@@ -4,7 +4,6 @@ import { Highlight } from '@/components/_page-elements/HighlightSection'
 const SidebarHighlights: React.FC<SidebarHighlightsI> = ({
     highlights
 }) => {
-    console.log({ highlights })
     return (
         <>
             {(highlights && highlights?.length > 0) &&
