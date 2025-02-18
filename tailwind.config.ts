@@ -6,16 +6,16 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    fontFamily: {
-      roboto: 'Roboto'
-    },
-    fontWeight: {
-      light: '300',
-      normal: '400',
-      medium: '500',
-      bold: '700',
-    },
     extend: {
+      fontFamily: {
+        roboto: 'Roboto'
+      },
+      fontWeight: {
+        light: '300',
+        normal: '400',
+        medium: '500',
+        bold: '700',
+      },
       colors: {
         background: '#F8F9FA',
         foreground: '#333333',
@@ -29,6 +29,13 @@ export default {
           darkGrey: '#525252'
         }
       },
+      borderRadius: {
+        'sm': '0.125rem',
+        'md': '0.375rem',
+        'lg': '0.5rem',
+        'full': '9999px',
+        'large': '12px',
+      }
     },
   },
   plugins: [],
