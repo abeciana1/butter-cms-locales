@@ -3,6 +3,7 @@ import {
     FontWeightE,
     FontSizeE
 } from '@/definitions/enums'
+import { ButterColor } from '../general';
 
 export interface ImageI {
     src: string;
@@ -41,4 +42,13 @@ export interface ButtonLinkI {
 
 export interface HTMLContentI {
     textContent: string;
+}
+
+export interface BlogCtaI {
+    headline: string;
+    bodyText: string
+    backgroundColor: ButterColor;
+    ctaLabel: string
+    ctaLink: string;
+    ctaColor: ButterColor;
 }
