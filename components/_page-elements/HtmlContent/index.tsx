@@ -11,7 +11,7 @@ const HtmlContent: React.FC<HTMLContentI> = ({
     const sanitizedContent = DOMPurify.sanitize(textContent)
     return (
         <div
-            className='html-content'
+            className='html-content leading-relaxed'
             dangerouslySetInnerHTML={{__html: sanitizedContent}}
         />
     )
