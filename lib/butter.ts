@@ -9,6 +9,14 @@ catch (e) {
   console.log(e)
 }
 
+type PageLookUpT = {
+  [key: string]: string;
+}
+
+export const pageTypeLookup: PageLookUpT = {
+  "blog": "custom_blog_page"
+}
+
 export const getNavMenu = (isPreview: string, modelName: string, slug: string) => {
     return butter.page.retrieve(modelName, slug, {
       preview: isPreview === 'preview=1' ? 1 : 0,
@@ -22,18 +30,19 @@ export const getNavMenu = (isPreview: string, modelName: string, slug: string) =
     });
 }
 
-export const getPageData = (isPreview: string, slug: string) => {
-  const page = slug === '/' ? 'homepage' : slug.split('/')[1]
-  return butter.page.retrieve('*', page, {
+export const getPageData = (isPreview: string, slug: string, pageType = '*') => {
+  const page = slug === '/' ? 'homepage' : slug.split('/')[slug.split('/')?.length - 1]
+  return butter.page.retrieve(pageType, page, {
     preview: isPreview === 'preview=1' ? 1 : 0,
     alt_media_text: 1,
     levels: 3
   } as any)
   .then(function(resp) {
+      console.log('resp', resp)
       return resp.data
   })
   .catch(function(resp) {
-      console.log(resp)
+      console.log('resp', resp)
   });
 }
 
