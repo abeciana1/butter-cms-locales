@@ -38,7 +38,6 @@ export const getPageData = (isPreview: string, slug: string, pageType = '*') => 
     levels: 3
   } as any)
   .then(function(resp) {
-      console.log('resp', resp)
       return resp.data
   })
   .catch(function(resp) {
