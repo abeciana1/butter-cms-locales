@@ -15,6 +15,7 @@ const ImageSection: React.FC<ImageSectionI> = ({
                 alt={image?.alt}
                 height={imageHeight}
                 width={imageWidth}
+                className='rounded-lg mx-auto py-5'
             />
         </section>
     )
