@@ -22,9 +22,9 @@ const Feature: React.FC<FeatureI> = ({
             <Link
                 href={link || '/'}
                 title={title}
-                className='flex justify-center items-center rounded-full max-w-fit relative mx-auto'
+                className='flex justify-center items-center rounded-full hover:rounded-full max-w-fit relative mx-auto'
                 style={{
-                    backgroundColor: default_color
+                    backgroundColor: hover ? hover_color : default_color
                 }}
             >
                 {hover ?
@@ -33,9 +33,6 @@ const Feature: React.FC<FeatureI> = ({
                         alt={default_image?.alt || 'feature'}
                         width={50}
                         height={50}
-                        style={{
-                            backgroundColor: hover_color
-                        }}
                         className={`p-1.5`}
                     />
                     :
