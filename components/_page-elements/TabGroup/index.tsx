@@ -5,7 +5,7 @@ import { Heading1 } from '@/components/_styled/Heading'
 import { ColorE, FontSizeE, FontWeightE } from '@/definitions/enums'
 import cx from 'classnames'
 import { FaChevronRight } from "react-icons/fa";
-import HTMLContent from '@/components/_styled/HTMLContent'
+import HTMLContent from '@/components/_page-elements/HtmlContent'
 import Image from 'next/image'
 import TextContent from '@/components/_styled/TextContent'
 
