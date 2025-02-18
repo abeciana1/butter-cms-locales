@@ -104,7 +104,8 @@ export default function DynamicPage() {
                 {hasBody &&
                     <section
                         className={cx({
-                            ['basis-2/3 block']: (body?.length > 0) && hasSidebar
+                            ['basis-2/3 block']: (body?.length > 0) && hasSidebar,
+                            ['px-10']: subDir === 'blog'
                         })}
                     >
                         {body?.map(({type, fields: sectionData}: any, index: number) => {
