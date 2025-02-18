@@ -11,31 +11,38 @@
     h2 {
         @apply font-roboto;
         @apply text-4xl;
+        @apply pt-2;
     }
     
     h3 {
-        @apply font-roboto;;
+        @apply font-roboto;
         @apply text-3xl;
+        @apply pt-2;
     }
     
     h4 {
         @apply font-roboto;
         @apply text-2xl;
+        @apply pt-2;
     }
     
     h5 {
         @apply font-roboto;
         @apply text-xl;
+        @apply pt-2;
     }
     
     h6 {
         @apply font-roboto;
         @apply text-lg;
+        @apply pt-2;
     }
     
     p {
         @apply text-lg;
         @apply font-roboto;
+        @apply pt-2;
+        @apply pt-2;
     }
 
     a {
