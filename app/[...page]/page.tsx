@@ -104,7 +104,7 @@ export default function DynamicPage() {
                 {hasBody &&
                     <section
                         className={cx({
-                            ['basis-2/3 block']: body?.length > 0
+                            ['basis-2/3 block']: (body?.length > 0) && hasSidebar
                         })}
                     >
                         {body?.map(({type, fields: sectionData}: any, index: number) => {
