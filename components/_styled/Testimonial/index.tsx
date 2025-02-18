@@ -1,7 +1,7 @@
 import { TestimonialDataI } from '@/definitions/interfaces//_section'
 import React from 'react'
 import Image from 'next/image'
-import HTMLContent from '@/components/_styled/HTMLContent'
+import HTMLContent from '@/components/_page-elements/HtmlContent'
 import TextContent from '@/components/_styled/TextContent'
 import { ColorE, FontWeightE, FontSizeE } from '@/definitions/enums'
 
