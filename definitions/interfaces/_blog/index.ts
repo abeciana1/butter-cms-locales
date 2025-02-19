@@ -24,7 +24,8 @@ export interface BlogPostDataI {
 export interface BlogEnginePostDataI {
     featured_image: string;
     seo_title: string;
-    slug?: string;
+    slug: string;
+    summary: string;
 }
 
 export interface BlogEngineTemplateDataI extends BlogEnginePostDataI {
