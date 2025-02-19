@@ -3,6 +3,7 @@ import {
     ButterColor,
     ButterFontWeight
 } from '@/definitions/interfaces/general'
+import { BlogPostDataI } from '@/definitions/interfaces/_blog'
 
 export interface HeroI {
     headline: string;
@@ -176,4 +177,11 @@ export interface TestimonialSectionI {
     headingFontWeight: ButterFontWeight;
     headingFontColor: ButterColor;
     reviews: TestimonialDataI[];
+}
+
+export interface CustomeBlogPostSectionI {
+    heading: string;
+    headingFontWeight: ButterFontWeight;
+    headingFontColor: ButterColor;
+    blogPosts: BlogPostDataI[];
 }
