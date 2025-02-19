@@ -58,3 +58,29 @@ export const collectionDataFetch = (modelName: string, page_size: number = 10, p
       console.log(resp)
   });
 }
+
+export const blogPostDataFetch = (path: string) => {
+  return butter.post.retrieve(path)
+    .then(function(resp) {
+        console.log(resp.data)
+    })
+    .catch(function(resp) {
+        console.log(resp)
+    });
+}
+
+interface BlogEngineListI {
+  page: number;
+  page_size: number;
+  exclude_body: boolean;
+  category_slug: string;
+}
+
+export const blogEnglinePostListFetch = (params: BlogEngineListI) => {
+  return butter.post.list(params)
+  .then(function(resp) {
+    console.log(resp.data)
+  }).catch(function(resp) {
+    console.log(resp)
+  });
+}
