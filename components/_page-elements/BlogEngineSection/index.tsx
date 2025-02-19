@@ -15,7 +15,6 @@ const BlogEngineSection: React.FC<BlogEngineSectionI> = async ({
         exclude_body: true,
         category_slug: categoryFilter === 'all' ? '*' : categoryFilter
     })
-    console.log('blogPosts', blogPosts)
     return (
         <section className='mt-32 pb-16 mx-5'>
             <div className='text-center'>
