@@ -59,9 +59,11 @@ export const collectionDataFetch = (modelName: string, page_size: number = 10, p
   });
 }
 
-export const blogPostDataFetch = (path: string) => {
+export const blogPostDataFetch = (isPreview: string, path: string) => {
   let blogPath = path.split("/post/")[1]
-  return butter.post.retrieve(blogPath)
+  return butter.post.retrieve(blogPath, {
+    preview: isPreview === 'preview=1' ? 1 : 0
+  })
     .then(function(resp) {
         console.log(resp.data)
     })
