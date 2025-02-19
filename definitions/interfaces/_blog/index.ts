@@ -23,8 +23,11 @@ export interface BlogPostDataI {
 
 export interface BlogEnginePostDataI {
     featured_image: string;
-    summary: string;
     seo_title: string;
-    meta_description: string;
-    slug: string;
+    slug?: string;
+}
+
+export interface BlogEngineTemplateDataI extends BlogEnginePostDataI {
+    body: string;
+    published: string;
 }
