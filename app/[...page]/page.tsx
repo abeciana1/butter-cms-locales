@@ -4,7 +4,7 @@ import { PageMarginWrapper } from '@/components/_layouts'
 import { headers } from 'next/headers';
 import { use } from 'react'
 import cx from 'classnames'
-import { getPageData, pageTypeLookup, blogPostDataFetch } from '@/lib/butter'
+import { getPageData, pageTypeLookup } from '@/lib/butter'
 import { PageProps } from '@/definitions/interfaces/general'
 
 interface PageFields {
