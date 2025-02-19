@@ -31,4 +31,5 @@ export interface BlogEnginePostDataI {
 export interface BlogEngineTemplateDataI extends BlogEnginePostDataI {
     body: string;
     published: string;
+    meta_description: string;
 }
