@@ -185,3 +185,11 @@ export interface CustomeBlogPostSectionI {
     headingFontColor: ButterColor;
     blogPosts: BlogPostDataI[];
 }
+
+export interface BlogEngineSectionI {
+    heading: string;
+    headingFontWeight: ButterFontWeight;
+    headingFontColor: ButterColor;
+    categoryFilter: string;
+    limit: number;
+}
