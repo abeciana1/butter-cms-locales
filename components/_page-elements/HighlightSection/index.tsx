@@ -15,13 +15,13 @@ export const Highlight: React.FC<HighlightI> = ({
     link_label
 }) => {
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col max-w-[312px]'>
             <Image
                 src={image}
                 alt={title}
                 width={280}
                 height={145}
-                className='pb-5 w-full max-h-44 rounded-md'
+                className='pb-5 w-full max-h-[176px] max-w-[312px] rounded-md'
             />
             <Link
                 href={link || '/'}
