@@ -4,7 +4,7 @@ import { PageMarginWrapper } from '@/components/_layouts'
 import { headers } from 'next/headers';
 import { use } from 'react'
 import cx from 'classnames'
-import { getPageData, pageTypeLookup } from '@/lib/butter'
+import { getPageData, pageTypeLookup, blogPostDataFetch } from '@/lib/butter'
 import { PageProps } from '@/definitions/interfaces/general'
 
 interface PageFields {
@@ -69,7 +69,12 @@ export default function DynamicPage() {
     const path = headersList.get("x-pathname")
     const subDir = headersList.get("x-subdir")
     const pageType = subDir ? pageTypeLookup[subDir] : '*'
-    const pageContent = use(getPageData(isPreview as string, path as string, pageType as string))
+    let pageContent;
+    if (subDir !== 'post') {
+        pageContent = use(getPageData(isPreview as string, path as string, pageType as string))
+    } else {
+        pageContent = use(blogPostDataFetch(path as string))
+    }
     const {
         sidebar,
         body
