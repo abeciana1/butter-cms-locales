@@ -3,7 +3,6 @@ import { BlogCtaI } from '@/definitions/interfaces/_styled'
 import cx from 'classnames'
 import ButtonLink from '@/components/_styled/ButtonLink'
 import TextContent from '@/components/_styled/TextContent'
-import { he } from 'date-fns/locale'
 
 const BlogCta: React.FC<BlogCtaI> = ({
     headline,
