@@ -20,3 +20,11 @@ export interface BlogPostDataI {
     };
     category: BlogCategory[];
 }
+
+export interface BlogEnginePostDataI {
+    featured_image: string;
+    summary: string;
+    seo_title: string;
+    meta_description: string;
+    slug: string;
+}
