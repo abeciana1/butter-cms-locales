@@ -25,6 +25,15 @@ const BlogEngineSection: React.FC<BlogEngineSectionI> = async ({
                     fontWeight={headingFontWeight?.font_weight}
                 />
             </div>
+            {(blogPosts && blogPosts?.length > 0) &&
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-fit mx-auto gap-10 mt-10'>
+                    {blogPosts?.map((blogPost, index) => {
+                        return (
+                            <></>
+                        )
+                    })}
+                </div>
+            }
         </section>
     )
 }
