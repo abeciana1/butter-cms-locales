@@ -30,8 +30,6 @@ export const generateMetadata = async (
     const {
         seo
     } = (pageData?.data?.fields ?? {}) as PageFields
-    // const seo = pageData?.data?.fields?.seo ;
-
     if (!seo) {
         return {
             title: "Default Title",
@@ -69,12 +67,7 @@ export default function DynamicPage() {
     const path = headersList.get("x-pathname")
     const subDir = headersList.get("x-subdir")
     const pageType = subDir ? pageTypeLookup[subDir] : '*'
-    let pageContent;
-    if (subDir !== 'post') {
-        pageContent = use(getPageData(isPreview as string, path as string, pageType as string))
-    } else {
-        pageContent = use(blogPostDataFetch(path as string))
-    }
+    const pageContent = use(getPageData(isPreview as string, path as string, pageType as string))
     const {
         sidebar,
         body
