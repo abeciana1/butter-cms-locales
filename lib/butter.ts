@@ -79,7 +79,7 @@ interface BlogEngineListI {
 export const blogEnglinePostListFetch = (params: BlogEngineListI) => {
   return butter.post.list(params)
   .then(function(resp) {
-    console.log(resp.data)
+    return resp?.data?.data
   }).catch(function(resp) {
     console.log(resp)
   });
