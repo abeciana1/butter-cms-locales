@@ -60,7 +60,8 @@ export const collectionDataFetch = (modelName: string, page_size: number = 10, p
 }
 
 export const blogPostDataFetch = (path: string) => {
-  return butter.post.retrieve(path)
+  let blogPath = path.split("/post/")[1]
+  return butter.post.retrieve(blogPath)
     .then(function(resp) {
         console.log(resp.data)
     })
