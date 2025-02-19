@@ -1,6 +1,7 @@
 import { BlogEngineSectionI } from '@/definitions/interfaces/_section'
 import { Heading1 } from '@/components/_styled/Heading'
 import { blogEnglinePostListFetch } from '@/lib/butter'
+import { BlogEnginePostDataI } from '@/definitions/interfaces/_blog'
 
 const BlogEngineSection: React.FC<BlogEngineSectionI> = async ({
     heading,
@@ -14,7 +15,7 @@ const BlogEngineSection: React.FC<BlogEngineSectionI> = async ({
         page_size: limit,
         exclude_body: true,
         category_slug: categoryFilter === 'all' ? '*' : categoryFilter
-    })
+    }) as BlogEnginePostDataI[]
     return (
         <section className='mt-32 pb-16 mx-5'>
             <div className='text-center'>
