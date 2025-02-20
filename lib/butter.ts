@@ -65,7 +65,7 @@ export const blogPostDataFetch = (isPreview: string, path: string) => {
     preview: isPreview === 'preview=1' ? 1 : 0
   })
     .then(function(resp) {
-        console.log(resp.data)
+      return resp?.data?.data
     })
     .catch(function(resp) {
         console.log(resp)
