@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { PageMarginWrapper } from '@/components/_layouts'
 import { headers } from 'next/headers';
 import { blogPostDataFetch } from '@/lib/butter'
 import { PageProps } from '@/definitions/interfaces/general'
