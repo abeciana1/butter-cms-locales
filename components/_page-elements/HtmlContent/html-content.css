@@ -2,53 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-.html-content {
-    h1 {
-        @apply font-roboto;
-        @apply text-5xl;
-    }
-    
-    h2 {
-        @apply font-roboto;
-        @apply text-4xl;
-        @apply pt-2;
-    }
-    
-    h3 {
-        @apply font-roboto;
-        @apply text-3xl;
-        @apply pt-2;
-    }
-    
-    h4 {
-        @apply font-roboto;
-        @apply text-2xl;
-        @apply pt-2;
-    }
-    
-    h5 {
-        @apply font-roboto;
-        @apply text-xl;
-        @apply pt-2;
-    }
-    
-    h6 {
-        @apply font-roboto;
-        @apply text-lg;
-        @apply pt-2;
-    }
-    
-    p {
-        @apply text-lg;
-        @apply font-roboto;
-        @apply pt-2;
-        @apply pt-2;
-    }
+.html-content h1 {
+    @apply font-roboto;
+    @apply text-5xl;
+}
 
-    a {
-        @apply text-blue-500;
-        @apply underline;
-        @apply underline-offset-2;
-        @apply decoration-2;
-    }
+.html-content h2 {
+    @apply font-roboto;
+    @apply text-4xl;
+    @apply pt-2;
+}
+
+.html-content h3 {
+    @apply font-roboto;
+    @apply text-3xl;
+    @apply pt-2;
+}
+
+.html-content h4 {
+    @apply font-roboto;
+    @apply text-2xl;
+    @apply pt-2;
+}
+
+.html-content h5 {
+    @apply font-roboto;
+    @apply text-xl;
+    @apply pt-2;
+}
+
+.html-content h6 {
+    @apply font-roboto;
+    @apply text-lg;
+    @apply pt-2;
+}
+
+.html-content p {
+    @apply text-lg;
+    @apply font-roboto;
+    @apply pt-2;
+    @apply pt-2;
+}
+
+.html-content a {
+    @apply text-blue-500;
+    @apply underline;
+    @apply underline-offset-2;
+    @apply decoration-2;
+}
+
+.html-content figure {
+    @apply py-5;
+}
+
+.html-content img {
+    @apply rounded-lg;
 }
