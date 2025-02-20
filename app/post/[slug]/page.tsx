@@ -57,7 +57,6 @@ const BlogPage = async () => {
     const isPreview = headersList.get("x-search-param")
     const path = headersList.get("x-pathname")
     const blogPostData = await blogPostDataFetch(isPreview as string, path as string) as BlogPageDataI
-    console.log('blogPostData', blogPostData)
     return (
         <main>
             <BlogTemplate
