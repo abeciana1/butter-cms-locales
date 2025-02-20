@@ -21,11 +21,11 @@ export const Highlight: React.FC<HighlightI> = ({
                 alt={title}
                 width={280}
                 height={145}
-                className='pb-5 w-full max-h-[176px] max-w-[312px] rounded-md'
+                className='w-full max-h-[176px] max-w-[312px] rounded-md'
             />
             <Link
                 href={link || '/'}
-                className='flex-none text-xl text-secondary hover:text-primary'
+                className='pt-5 flex-none text-xl text-secondary hover:text-primary'
             >
                 {title}
             </Link>
