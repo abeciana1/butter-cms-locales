@@ -7,13 +7,15 @@ const ImageSection: React.FC<ImageSectionI> = ({
     imageWidth
 }) => {
     return (
-        <Image
-            src={image?.url}
-            alt={image?.alt}
-            height={imageHeight}
-            width={imageWidth}
-            className='rounded-md mx-auto py-5'
-        />
+        <figure className='py-5'>
+            <Image
+                src={image?.url}
+                alt={image?.alt}
+                height={imageHeight}
+                width={imageWidth}
+                className='rounded-lg mx-auto'
+            />
+        </figure>
     )
 }
 
