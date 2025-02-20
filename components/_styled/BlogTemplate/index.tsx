@@ -12,8 +12,8 @@ const BlogTemplate: React.FC<BlogEngineTemplateDataI> = ({
     published
 }) => {
     return (
-        <article>
-            <header>
+        <article className='px-10'>
+            <header className='pt-10'>
                 <Heading1
                     text={seo_title}
                     color={ColorE.PRIMARY}
