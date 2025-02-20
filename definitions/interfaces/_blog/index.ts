@@ -28,8 +28,22 @@ export interface BlogEnginePostDataI {
     summary: string;
 }
 
-export interface BlogEngineTemplateDataI extends BlogEnginePostDataI {
+export interface BlogEngineTemplateDataI {
     body: string;
     published: string;
+    featured_image: string;
+    seo_title: string;
+}
+
+export interface BlogPageSeoI {
+    seo_title: string;
+    featured_image: string;
     meta_description: string;
+}
+
+export interface BlogPageDataI {
+    seo_title: string;
+    featured_image: string;
+    body: string;
+    published: string;
 }
