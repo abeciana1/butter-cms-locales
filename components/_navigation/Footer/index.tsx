@@ -12,7 +12,8 @@ import SocialLinks from '@/components/_footer/SocialLinks'
 const Footer = () => {
     const headersList = use(headers());
     const isPreview = headersList.get("x-search-param")
-    const navContent = use(getNavMenu(isPreview as string, 'footer_menu', 'footer-menu'))
+    const locale = headersList.get("x-locale")
+    const navContent = use(getNavMenu(isPreview as string, 'footer_menu', 'footer-menu', locale as string))
 
     const {
         medical_center_name,
@@ -28,7 +29,7 @@ const Footer = () => {
             <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-32 gap-10 place-content-evenly'>
                 <section className='max-w-64'>
                     <Link
-                        href='/'
+                        href={`/${locale}`}
                         className='text-primary hover:text-secondary text-xl font-medium'
                         title={medical_center_name}
                     >
