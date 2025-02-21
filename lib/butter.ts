@@ -30,12 +30,13 @@ export const getNavMenu = (isPreview: string, modelName: string, slug: string) =
     });
 }
 
-export const getPageData = (isPreview: string, slug: string, pageType = '*') => {
+export const getPageData = (isPreview: string, slug: string, pageType = '*', locale: string = 'en') => {
   const page = slug === '/' ? 'homepage' : slug.split('/')[slug.split('/')?.length - 1]
   return butter.page.retrieve(pageType, page, {
     preview: isPreview === 'preview=1' ? 1 : 0,
     alt_media_text: 1,
-    levels: 3
+    levels: 3,
+    locale: locale
   } as any)
   .then(function(resp) {
       return resp.data
@@ -45,11 +46,12 @@ export const getPageData = (isPreview: string, slug: string, pageType = '*') => 
   });
 }
 
-export const collectionDataFetch = (modelName: string, page_size: number = 10, page: number = 1) => {
+export const collectionDataFetch = (modelName: string, page_size: number = 10, page: number = 1, locale: string = 'en') => {
   return butter.content.retrieve([modelName], {
     page_size: page_size,
     page: page,
     alt_media_text: 1,
+    locale: locale
   } as any)
   .then(function(resp) {
       return resp?.data?.data
