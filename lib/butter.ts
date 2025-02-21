@@ -33,7 +33,8 @@ export const getNavMenu = (isPreview: string, modelName: string, slug: string, l
 
 export const getPageData = (isPreview: string, slug: string, pageType = '*', locale: string = 'en') => {
   const page = slug === `/${locale}` ? 'homepage' : slug.split(`/${locale}`)[slug.split(`/${locale}`)?.length - 1]
-  return butter.page.retrieve(pageType, page, {
+  const butterSlug = page.split('/')[2]
+  return butter.page.retrieve(pageType, (butterSlug || page), {
     preview: isPreview === 'preview=1' ? 1 : 0,
     alt_media_text: 1,
     levels: 3,
