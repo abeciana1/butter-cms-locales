@@ -1,13 +1,16 @@
 import { TestimonialSectionI, TestimonialDataI } from '@/definitions/interfaces/_section'
 import { Heading1 } from '@/components/_styled/Heading'
 import TestimonialCard from '@/components/_styled/Testimonial'
+import { headers } from 'next/headers';
 
-const TestimonialSection: React.FC<TestimonialSectionI> = ({
+const TestimonialSection: React.FC<TestimonialSectionI> = async ({
     heading,
     reviews,
     headingFontWeight,
     headingFontColor
 }) => {
+    const headersList = await headers()
+    const locale = headersList.get("x-locale") || 'en'
     return (
         <section className='mt-32 pb-16 mx-5'>
             <div className='text-center'>
