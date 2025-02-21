@@ -17,10 +17,11 @@ export const pageTypeLookup: PageLookUpT = {
   "blog": "custom_blog_page"
 }
 
-export const getNavMenu = (isPreview: string, modelName: string, slug: string) => {
+export const getNavMenu = (isPreview: string, modelName: string, slug: string, locale: string = 'en') => {
     return butter.page.retrieve(modelName, slug, {
       preview: isPreview === 'preview=1' ? 1 : 0,
-      alt_media_text: 1
+      alt_media_text: 1,
+      locale: locale
     } as any)
     .then(function(resp) {
         return resp.data
@@ -31,7 +32,7 @@ export const getNavMenu = (isPreview: string, modelName: string, slug: string) =
 }
 
 export const getPageData = (isPreview: string, slug: string, pageType = '*', locale: string = 'en') => {
-  const page = slug === '/' ? 'homepage' : slug.split('/')[slug.split('/')?.length - 1]
+  const page = slug === `/${locale}` ? 'homepage' : slug.split(`/${locale}`)[slug.split(`/${locale}`)?.length - 1]
   return butter.page.retrieve(pageType, page, {
     preview: isPreview === 'preview=1' ? 1 : 0,
     alt_media_text: 1,
@@ -81,7 +82,7 @@ interface BlogEngineListI {
   category_slug: string;
 }
 
-export const blogEnglinePostListFetch = (params: BlogEngineListI) => {
+export const blogEnginePostListFetch = (params: BlogEngineListI) => {
   return butter.post.list(params)
   .then(function(resp) {
     return resp?.data?.data
