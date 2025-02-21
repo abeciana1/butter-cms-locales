@@ -1,6 +1,6 @@
 import { BlogEngineSectionI } from '@/definitions/interfaces/_section'
 import { Heading1 } from '@/components/_styled/Heading'
-import { blogEnglinePostListFetch } from '@/lib/butter'
+import { blogEnginePostListFetch } from '@/lib/butter'
 import { BlogEnginePostDataI } from '@/definitions/interfaces/_blog'
 import { Highlight } from '@/components/_page-elements/HighlightSection'
 
@@ -11,7 +11,7 @@ const BlogEngineSection: React.FC<BlogEngineSectionI> = async ({
     categoryFilter,
     limit
 }) => {
-    const blogPosts = await blogEnglinePostListFetch({
+    const blogPosts = await blogEnginePostListFetch({
         page: 1,
         page_size: limit,
         exclude_body: true,
