@@ -12,10 +12,11 @@ export const generateMetadata = async (
   const resolvedSearchParams = await searchParams;
   const headersList = await headers()
   const path = headersList.get("x-pathname")
+  const locale = headersList.get("x-locale")
   const isPreview =
     (typeof resolvedSearchParams?.preview === 'string' &&
     resolvedSearchParams.preview === '1') ? 'preview=1' : ''
-  const pageData = await getPageData(isPreview, path as string)
+  const pageData = await getPageData(isPreview as string, path as string, '*', locale as string)
   const {
     seo
   } = pageData?.data?.fields as any
@@ -39,7 +40,8 @@ export default function Home() {
   const headersList = use(headers());
   const isPreview = headersList.get("x-search-param")
   const path = headersList.get("x-pathname")
-  const pageContent = use(getPageData(isPreview as string, path as string))
+  const locale = headersList.get("x-locale")
+  const pageContent = use(getPageData(isPreview as string, path as string, '*', locale as string))
   const {
     body
   } = pageContent?.data?.fields as any
