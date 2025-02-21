@@ -9,7 +9,8 @@ import Link from 'next/link'
 const NavBar = () => {
     const headersList = use(headers());
     const isPreview = headersList.get("x-search-param")
-    const navContent = use(getNavMenu(isPreview as string, 'navigation_menu', 'main-menu'))
+    const locale = headersList.get("x-locale")
+    const navContent = use(getNavMenu(isPreview as string, 'navigation_menu', 'main-menu', locale as string))
     const {
         fields
     } = navContent?.data as NavBarI
@@ -17,7 +18,7 @@ const NavBar = () => {
         <div className='sticky top-0 z-50 bg-background'>
             <nav className='flex relative justify-between items-center py-5 px-5'>
                 <Link
-                    href='/'
+                    href={`/${locale}`}
                     title='Homepage link'
                 >
                     <Image
