@@ -1,13 +1,16 @@
 import { CustomeBlogPostSectionI } from '@/definitions/interfaces/_section'
 import { Heading1 } from '@/components/_styled/Heading'
 import { Highlight } from '@/components/_page-elements/HighlightSection'
+import { headers } from 'next/headers';
 
-const CustomeBlogPostSection: React.FC<CustomeBlogPostSectionI> = ({
+const CustomeBlogPostSection: React.FC<CustomeBlogPostSectionI> = async ({
     heading,
     headingFontWeight,
     headingFontColor,
     blogPosts
 }) => {
+    const headersList = await headers()
+    const locale = headersList.get("x-locale") || 'en'
     return (
         <section className='mt-32 pb-16 mx-5'>
             <div className='text-center'>
@@ -26,7 +29,7 @@ const CustomeBlogPostSection: React.FC<CustomeBlogPostSectionI> = ({
                                 title={blogPost?.fields?.seo?.title}
                                 excerpt={blogPost?.fields?.seo?.description}
                                 image={blogPost?.fields?.seo?.open_graph_image}
-                                link={`/blog/${blogPost?.slug}`}
+                                link={`${locale}/blog/${blogPost?.slug}`}
                                 link_label='Read more'
                             />
                         )
