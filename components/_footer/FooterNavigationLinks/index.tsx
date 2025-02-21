@@ -2,6 +2,7 @@ import { FooterNavigationLinkI } from '@/definitions/interfaces/_footer'
 import { SubsectionLinkI } from '@/definitions/interfaces/_navigation'
 import Link from 'next/link'
 import { FaChevronRight } from "react-icons/fa6";
+import { headers } from 'next/headers';
 
 const FooterNavigationSubLinks: React.FC<SubsectionLinkI> = ({
     label,
@@ -24,7 +25,7 @@ const FooterNavigationSubLinks: React.FC<SubsectionLinkI> = ({
     )
 }
 
-const FooterNavigationLink: React.FC<FooterNavigationLinkI> = ({
+const FooterNavigationLink: React.FC<FooterNavigationLinkI> = async ({
     navLink
 }) => {
     const {
@@ -32,10 +33,12 @@ const FooterNavigationLink: React.FC<FooterNavigationLinkI> = ({
         url,
         subsection_links
     } = navLink?.fields
+    const headersList = await headers()
+    const locale = headersList.get("x-locale")
     return (
         <section>
             <Link
-                href={url || '/'}
+                href={url || `/${locale}`}
                 className='text-primary hover:text-secondary font-medium text-xl'
             >
                 {label}
