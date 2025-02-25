@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import ComponentRenderer from '@/components/ComponentRender'
 import { PageMarginWrapper } from '@/components/_layouts'
 import { headers } from 'next/headers';
-import { use } from 'react'
 import cx from 'classnames'
 import { getPageData, pageTypeLookup } from '@/lib/butter'
 import { PageProps } from '@/definitions/interfaces/general'
@@ -29,7 +28,7 @@ export const generateMetadata = async (
     const isPreview =
     (typeof resolvedSearchParams?.preview === 'string' &&
     resolvedSearchParams.preview === '1') ? 'preview=1' : ''
-    const pageData = await getPageData(isPreview as string, path as string, pageType as string, locale as string)
+    const pageData = await getPageData(isPreview as string, path as string, pageType as string, locale as string, '')
     const {
         seo
     } = (pageData?.data?.fields ?? {}) as PageFields
@@ -64,14 +63,14 @@ export const generateMetadata = async (
     };
 }
 
-export default function DynamicPage() {
-    const headersList = use(headers());
+export default async function DynamicPage() {
+    const headersList = await headers()
     const isPreview = headersList.get("x-search-param")
     const path = headersList.get("x-pathname")
     const subDir = headersList.get("x-subdir")
     const pageType = subDir ? pageTypeLookup[subDir] : '*'
     const locale = headersList.get("x-locale")
-    const pageContent = use(getPageData(isPreview as string, path as string, pageType as string, locale as string))
+    const pageContent = await getPageData(isPreview as string, path as string, pageType as string, locale as string, '')
     const {
         sidebar,
         body
