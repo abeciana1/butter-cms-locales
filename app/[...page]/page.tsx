@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import ComponentRenderer from '@/components/ComponentRender'
 import { PageMarginWrapper } from '@/components/_layouts'
-import { headers } from 'next/headers';
+import { headers, cookies } from 'next/headers';
 import cx from 'classnames'
 import { getPageData, pageTypeLookup } from '@/lib/butter'
 import { PageProps } from '@/definitions/interfaces/general'
@@ -25,10 +25,12 @@ export const generateMetadata = async (
     const locale = headersList.get("x-locale")
     const subDir = headersList.get("x-subdir")
     const pageType = subDir ? pageTypeLookup[subDir] : '*'
+    const cookieStore = await cookies()
+    const abTestCookie = (!cookieStore?.get('version-a') && !cookieStore?.get('version-b')) ? 'a' : (cookieStore?.get('version-a')?.value === 'true' ? 'a' : 'b')
     const isPreview =
     (typeof resolvedSearchParams?.preview === 'string' &&
     resolvedSearchParams.preview === '1') ? 'preview=1' : ''
-    const pageData = await getPageData(isPreview as string, path as string, pageType as string, locale as string, '')
+    const pageData = await getPageData(isPreview as string, path as string, pageType as string, locale as string, abTestCookie)
     const {
         seo
     } = (pageData?.data?.fields ?? {}) as PageFields
@@ -70,7 +72,9 @@ export default async function DynamicPage() {
     const subDir = headersList.get("x-subdir")
     const pageType = subDir ? pageTypeLookup[subDir] : '*'
     const locale = headersList.get("x-locale")
-    const pageContent = await getPageData(isPreview as string, path as string, pageType as string, locale as string, '')
+    const cookieStore = await cookies()
+    const abTestCookie = (!cookieStore?.get('version-a') && !cookieStore?.get('version-b')) ? 'a' : (cookieStore?.get('version-a')?.value === 'true' ? 'a' : 'b')
+    const pageContent = await getPageData(isPreview as string, path as string, pageType as string, locale as string, abTestCookie)
     const {
         sidebar,
         body
