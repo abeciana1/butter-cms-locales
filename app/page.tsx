@@ -17,7 +17,7 @@ export const generateMetadata = async (
   const isPreview =
     (typeof resolvedSearchParams?.preview === 'string' &&
     resolvedSearchParams.preview === '1') ? 'preview=1' : ''
-  const pageData = await getPageData(isPreview as string, path as string, '*', locale as string)
+  const pageData = await getPageData(isPreview as string, path as string, '*', locale as string, abTestCookie)
   const {
     seo
   } = pageData?.data?.fields as any
