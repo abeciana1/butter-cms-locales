@@ -1,6 +1,5 @@
-import { use } from 'react'
 import { getPageData } from '@/lib/butter'
-import { headers } from 'next/headers';
+import { headers, cookies } from 'next/headers';
 import type { Metadata } from 'next'
 import ComponentRenderer from '@/components/ComponentRender'
 import { PageMarginWrapper } from '@/components/_layouts'
@@ -13,6 +12,8 @@ export const generateMetadata = async (
   const headersList = await headers()
   const path = headersList.get("x-pathname")
   const locale = headersList.get("x-locale")
+  const cookieStore = await cookies()
+  const abTestCookie = (!cookieStore?.get('version-a') && !cookieStore?.get('version-b')) ? 'a' : (cookieStore?.get('version-a')?.value === 'true' ? 'a' : 'b')
   const isPreview =
     (typeof resolvedSearchParams?.preview === 'string' &&
     resolvedSearchParams.preview === '1') ? 'preview=1' : ''
@@ -36,12 +37,14 @@ export const generateMetadata = async (
   }
 }
 
-export default function Home() {
-  const headersList = use(headers());
+export default async function Home() {
+  const headersList = await headers()
   const isPreview = headersList.get("x-search-param")
   const path = headersList.get("x-pathname")
   const locale = headersList.get("x-locale")
-  const pageContent = use(getPageData(isPreview as string, path as string, '*', locale as string))
+  const cookieStore = await cookies()
+  const abTestCookie = (!cookieStore?.get('version-a') && !cookieStore?.get('version-b')) ? 'a' : (cookieStore?.get('version-a')?.value === 'true' ? 'a' : 'b')
+  const pageContent = await getPageData(isPreview as string, path as string, '*', locale as string, abTestCookie)
   const {
     body
   } = pageContent?.data?.fields as any
