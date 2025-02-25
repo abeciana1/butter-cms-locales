@@ -64,7 +64,7 @@ const PersonalizedCta: React.FC<PersonalizedCtaI> = async ({
             </div>
             <div className='whitespace-nowrap'>
                 <ButtonLink
-                    link={cta_link}
+                    link={`/${locale}${cta_link}`}
                     linkText={cta_link_label}
                     fontWeight={FontWeightE.MEDIUM}
                     buttonColor={cta_color.color}
