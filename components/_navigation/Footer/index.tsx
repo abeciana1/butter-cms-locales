@@ -1,4 +1,3 @@
-import { use } from 'react'
 import { getNavMenu } from '@/lib/butter'
 import { headers } from 'next/headers';
 import Link from 'next/link'
@@ -9,11 +8,11 @@ import { FooterDataI, LinkFieldsI } from '@/definitions/interfaces/_footer'
 import FooterNavigationLink from '@/components/_footer/FooterNavigationLinks'
 import SocialLinks from '@/components/_footer/SocialLinks'
 
-const Footer = () => {
-    const headersList = use(headers());
+const Footer = async () => {
+    const headersList = await headers()
     const isPreview = headersList.get("x-search-param")
     const locale = headersList.get("x-locale")
-    const navContent = use(getNavMenu(isPreview as string, 'footer_menu', 'footer-menu', locale as string))
+    const navContent = await getNavMenu(isPreview as string, 'footer_menu', 'footer-menu', locale as string)
 
     const {
         medical_center_name,
