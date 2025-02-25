@@ -31,7 +31,7 @@ export const getNavMenu = (isPreview: string, modelName: string, slug: string, l
     });
 }
 
-export const getPageData = (isPreview: string, slug: string, pageType = '*', locale: string = 'en', abTestCookie: 'a' | 'b' = 'a') => {
+export const getPageData = (isPreview: string, slug: string, pageType = '*', locale: string = 'en', abTestCookie: 'a' | 'b' | '' = 'a') => {
   const page = slug === `/${locale}` ? `homepage-${abTestCookie}` : slug.split(`/${locale}`)[slug.split(`/${locale}`)?.length - 1]
   const butterSlug = page.split('/')[2]
   return butter.page.retrieve(pageType, (butterSlug || page), {
