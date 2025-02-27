@@ -3,6 +3,7 @@ import { Heading1 } from '@/components/_styled/Heading'
 import { blogEnginePostListFetch } from '@/lib/butter'
 import { BlogEnginePostDataI } from '@/definitions/interfaces/_blog'
 import { Highlight } from '@/components/_page-elements/HighlightSection'
+import { headers } from 'next/headers';
 
 const BlogEngineSection: React.FC<BlogEngineSectionI> = async ({
     heading,
@@ -17,6 +18,8 @@ const BlogEngineSection: React.FC<BlogEngineSectionI> = async ({
         exclude_body: true,
         category_slug: categoryFilter === 'all' ? '' : categoryFilter
     }) as BlogEnginePostDataI[]
+    const headersList = await headers()
+    const locale = headersList.get("x-locale")
     return (
         <section className='mt-32 pb-16 mx-5'>
             <div className='text-center'>
@@ -35,7 +38,7 @@ const BlogEngineSection: React.FC<BlogEngineSectionI> = async ({
                                 title={blogPost?.seo_title}
                                 excerpt={blogPost?.summary}
                                 image={blogPost?.featured_image}
-                                link={`/post/${blogPost?.slug}`}
+                                link={`${locale}/post/${blogPost?.slug}`}
                                 link_label='Read more'
                             />
                         )
